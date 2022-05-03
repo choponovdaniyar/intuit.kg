@@ -1,0 +1,70 @@
+{% load static %}
+<script src="{% static 'js/jquery-3.6.0.min.js' %}"></script>
+
+<section class="top">   
+    <div class="container top__inner">
+        <a href="" class="top__info-inner a a_blue">
+            <div class="top__info">
+                Сведения об образовательной организации
+            </div>
+        </a>
+        <a class="a a_green" href="">
+            <div class="top__lang lang">
+                <div class="lang__left">
+                    <img src="{% static 'img/flag-en.png' %}" alt="">
+                </div>
+                <div class="lang__text">
+                    English
+                </div>
+            </div>
+        </a>   
+    </div>
+</section>
+<header class="header">
+    <div class="container header__inner">
+        
+        <a href="/" class="logo">
+            <img src="{% static 'img/logo.png' %}" alt="" class="logo header__logo">
+        </a>
+        <div class="header__phones phones">
+            <div class="header__phone phone">
+                <div class="phone__left">
+                    <img src="{% static 'img/icons/phone-icon.svg' %}"alt="">
+                </div>
+                <div class="phone__text">
+                    <a class="a a_green" href="tel:74958001001">+996 312 88 40 96</a>
+                </div>
+            </div>
+            <!-- <div class="header__phone phone">
+                <div class="phone__left">
+                    <img src="./img/icons/phone-icon.svg" alt="">
+                </div>
+                <div class="phone__text">
+                    <a class="a a_green"href="tel:74958001001">+996 312 88 40 96</a>
+                </div>
+                <div class="phone__right">
+                    <img src="./img/icons/24-7-icon.svg" alt="">
+                </div>
+            </div> -->
+        </div>
+        <div class="header__burger burger burger_color">
+            <div href="" id="burger-trigger" class="burger__btn">
+                <span class="burger__burger"></span>
+                <span class="burger__exit"></span>
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <div class="header__educations">
+            <nav class="header__education education"><a href="{% url 'main:enrollee' %}" class="a a_green">Абитуриентам</a></nav>
+            <nav class="header__education education"><a href="{% url 'faculty:faculties' %}" class="a a_green">Институты</a></nav>
+            <nav class="header__education education"><a href="{% url 'faculty:collage' %}" class="a a_green">Колледжи</a></nav>
+            <nav class="header__education education"><a href="{% url 'faculty:education' education='bakalavriat' %}" class="a a_green">Бакалавриат</a></nav>
+            <nav class="header__education education"><a href="{% url 'faculty:education' education='magistratura' %}" class="a a_green">Магистратура</a></nav>
+            <nav class="header__education education"><a href="{% url 'faculty:education' education='aspirantura' %}" class="a a_green">Аспирантура</a></nav>
+            <nav class="header__education education"><a href="{% url 'faculty:education' education='kursy' %}" class="a a_green">Курсы</a></nav>
+            <nav class="header__education education"><a href="{% url 'news:new_list' %}" class="a a_green">Новости</a></nav>
+            <nav class="footer__education education"><a href="" class="a a_green">Enactus</a></nav>
+        </div>  
+    </div>
+</header>

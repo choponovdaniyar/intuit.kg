@@ -1,0 +1,86 @@
+<div class="open-door-day bottom">
+    <div class="container">
+        <div class="open-door-day__title h2 text_blue">
+            Посети день открытых дверей очно или онлайн
+        </div>
+        <div class="open-door-day__subtitle">
+            Подробно рассмотрим важные для абитуриентов темы:
+        </div>
+
+
+        <div class="open-door-day__desc-items">
+            <div class="open-door-day__desc-item">
+                <div class="open-door-day__desc-title h3 text_bl">
+                    <div class="open-door-day__desc-icon">
+                        <img src="{% static 'img/icons/logo_on-text40x40.svg' %}" alt="">
+                    </div>
+                    <div class="open-door-day__desc-text text_blue">
+                        Обучение
+                    </div>    
+                </div>
+                <div class="open-door-day__desc-desc">
+                    Презентации образовательных программ и знакомство с ведущими преподавателями
+                </div>
+            </div>
+            <div class="open-door-day__desc-item">
+                <div class="open-door-day__desc-title h3 text_bl">
+                    <div class="open-door-day__desc-icon">
+                        <img src="{% static 'img/icons/logo_on-text40x40.svg' %}" alt="">
+                    </div>
+                    <div class="open-door-day__desc-text text_blue">
+                        Правила приема
+                    </div>    
+                </div>
+                <div class="open-door-day__desc-desc">
+                    Документы, необходимые для поступления, стоимость обучения, специальные условия и льготы
+                </div>
+            </div>
+            <div class="open-door-day__desc-item">
+                <div class="open-door-day__desc-title h3 text_bl">
+                    <div class="open-door-day__desc-icon">
+                        <img src="{% static 'img/icons/logo_on-text40x40.svg' %}" alt="">
+                    </div>
+                    <div class="open-door-day__desc-text text_blue">
+                        Студентческая жизнь
+                    </div>    
+                </div>
+                <div class="open-door-day__desc-desc">
+                    В университетском комплексе, студенческие клубы и команды, яркие мероприятия
+                </div>
+            </div>
+            <div class="open-door-day__desc-item">
+                <div class="open-door-day__desc-title h3 text_bl">
+                    <div class="open-door-day__desc-icon">
+                        <img src="{% static 'img/icons/logo_on-text40x40.svg' %}" alt="">
+                    </div>
+                    <div class="open-door-day__desc-text text_blue">
+                        Enactus
+                    </div>    
+                </div>
+                <div class="open-door-day__desc-desc">
+                    Креативное предпринимательство, разработка бизнес-планов, воплощение бизнес-идеи
+                </div>
+            </div>
+            
+
+        </div>                
+    </div>
+</div>
+
+<div class="open-door-day-form bottom">
+    <div class="container">
+        <div class="open-door-day-form__inner">
+            <div class="h2 text_blue open-door-day-form-form__title">
+                Подпишись на день открытых дверей
+            </div>   
+            <form action="" method="post">
+                {% for field in form %}
+                    {{ field }}
+                {% endfor %}
+                <div class="button">
+                    <button class="button" type="submit">Отправить</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>     

@@ -1,0 +1,17 @@
+.top{
+    background-color: #F3F6FD;
+}
+
+.top__inner{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+@media screen and (max-width: 768px) {
+    .top{
+        display: none;
+    }
+}
+
+

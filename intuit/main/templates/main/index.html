@@ -1,0 +1,52 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Главная</title>
+
+    <link rel="stylesheet" href="{% static 'css/index/admission.css' %}">
+    <link rel="stylesheet" href="{% static 'css/index/go-to-university.css' %}">
+    <link rel="stylesheet" href="{% static 'css/index/open-door-day.css' %}">
+    <link rel="stylesheet" href="{% static 'css/index/open-door-day-form.css' %}">
+    <link rel="stylesheet" href="{% static 'css/index/top.css' %}">
+    <link rel="stylesheet" href="{% static 'css/index/quiz.css' %}">
+    <link rel="stylesheet" href="{% static 'css/index/catalog.css' %}">
+    <link rel="stylesheet" href="{% static 'css/index/about.css' %}">
+    <link rel="stylesheet" href="{% static 'css/index/diploms.css' %}">
+    <link rel="stylesheet" href="{% static 'css/index/programs.css' %}">
+    <link rel="stylesheet" href="{% static 'css/index/partners.css'%}">
+    <link rel="stylesheet" href="{% static 'css/index/news.css' %}">
+
+    <link rel="stylesheet" href="{% static 'css/base/base.css' %}">
+    <link rel="stylesheet" href="{% static 'css/base/elems.css' %}">
+    <link rel="stylesheet" href="{% static 'css/base/header.css' %}">
+    <link rel="stylesheet" href="{% static 'css/base/footer.css' %}">
+    <link rel="stylesheet" href="{% static 'css/base/burger.css' %}">
+
+
+    
+
+</head>
+<body>
+    {% include 'bases/header.html'%}
+    <main>   
+        {% include 'main/blocks/quiz.html' with form=quiz%} 
+        {% include 'main/blocks/catalog.html' %} 
+        {% include 'main/blocks/programs.html' %}
+        {% include 'main/blocks/about.html'%}
+        {% include 'main/blocks/admission.html' %}  
+        {% include 'main/blocks/go-to-uniersity.html' with form=go_to %} 
+        {% include 'main/blocks/diploms.html' %} 
+        {% include 'main/blocks/news.html' %}
+        
+        {% include 'main/blocks/partners.html' with companies=partners  %}
+
+    </main>
+
+    {% include 'bases/footer.html' %}
+
+</body>
+</html>

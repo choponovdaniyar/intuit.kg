@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+
+{% block main %}
+{% include 'faculty/blocks/banner.html' %}
+{% if collage %}
+    {% include 'faculty/blocks/plofiles.html' with edu_title='Программы колледжа' profiles=collage %}
+{% endif %}
+{% if under %}
+    {% include 'faculty/blocks/plofiles.html' with edu_title='Профили бакалавриата' profiles=under %}
+{% endif %}
+{% if middle %}
+    {% include 'faculty/blocks/plofiles.html' with edu_title='Магистратура' profiles=middle %}
+{% endif %}
+{% if post %} 
+    {% include 'faculty/blocks/plofiles.html' with edu_title='Специальности аспирантуры' profiles=post %}
+{% endif %}
+{% include 'main/blocks/admission.html' with form=admission%}
+{% endblock %}
+

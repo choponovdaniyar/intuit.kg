@@ -1,0 +1,23 @@
+{% extends 'root.html' %}
+
+{% block head %}
+    {% include 'bases/head.html' %}
+{% endblock %}
+
+
+{% block header %}
+    {% include 'bases/header.html' %}
+{% endblock %}
+
+
+{% block footer %}
+    {% include 'bases/footer.html' %}
+{% endblock %}
+
+{% block scripts %}
+    {% load static %}
+    <script src="{% static 'js/jquery-3.6.0.min.js' %}"></script>
+    <script src="{% static 'js/burger.js' %}"></script>
+    <script src="{% static 'js/accordion.js' %}"></script>
+{% endblock %}
+

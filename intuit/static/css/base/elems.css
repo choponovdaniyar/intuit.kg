@@ -1,0 +1,299 @@
+.lang{
+    display: flex;
+    align-items: center;
+}
+.lang__left{
+    margin: 5px;
+}
+
+
+.logo{
+    height: auto;
+    width: auto;
+}
+
+
+
+.phones{
+    font-weight: 700;
+}
+.phone{
+    display: flex;
+    align-items: center;
+}
+.phone__left{
+    padding-right: 5px;
+}
+.phone__right{
+    padding-left: 5px;
+}
+
+
+.navbar-wrapper{
+    display: inline-grid;
+    grid-template-columns: repeat(3,1fr);
+    align-items: flex-start;
+}
+.navbar{
+    margin: 15px;
+}
+.nav-title{
+    font-weight: 700;
+    text-transform: capitalize;
+}
+
+
+
+.networks{
+    display: grid;
+    grid-template-rows: repeat(2,auto);
+    justify-content: center;
+    align-items: center;
+    grid-gap: 10px;
+}
+@media screen and (max-width: 768px) {
+    .networks{
+        grid-gap: 10px;
+    }
+}
+
+.networks__title{
+    align-items: flex-end;
+    justify-self: center;
+}
+
+
+.networks__content{
+    display: inline-grid;
+    grid-template-columns: repeat(4, auto);
+    grid-gap: 15px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.address{
+    display: grid;
+    grid-template-rows: repeat(2, auto);
+    grid-gap: 8px;
+}
+.address__city{
+    font-weight: 700;
+}
+
+
+.work-days{
+    display: grid;
+    grid-template-columns: repeat(1, auto);
+
+    grid-gap: 8px;
+
+}
+
+
+.work-day{
+    display: grid;
+    grid-template-columns: repeat(2, auto);
+
+    width: 200px;
+}
+
+
+.work-day__time{
+    justify-self: end;
+
+    font-weight: 700;
+}
+
+
+nav{
+    margin-top: 16px;
+}
+
+
+
+.nav-title__icon{
+    width: 26px;
+    height: 26px;
+    
+    background-color:#00956F;
+    
+    border-radius: 50%;
+
+    transition: .2s background-color ;
+}
+
+@media screen and (min-width: 769px) {
+    .nav-title__icon{
+        display: none;
+    }   
+}
+.nav-title__icon:hover{
+    background-color: #2A2173;
+}
+.nav-title__icon::after{
+    content: "";
+    display: block;
+
+    position: relative;
+    top: 6px;
+    
+    width: 8px;
+    height: 8px;
+
+    margin: auto;
+
+    border-left: 2px solid #E8EDF9;
+    border-bottom: 2px solid #E8EDF9;
+
+    transform: rotate(-45deg);
+
+    content: '';
+
+    transition: .2s all;
+}
+#icon_active{
+    background-color: #2A2173;
+}
+
+#icon_active::after{
+    top: 10px;
+
+    transform: rotate(135deg);
+}
+
+
+
+
+
+
+
+
+.welcome__img{
+    width: auto;
+    max-height: 486px;
+}
+@media screen and (max-width: 992px) {
+    .welcome__img{
+        width: auto;
+        max-height: 320px;
+    }
+}
+@media screen and (max-width: 768px) {
+    .welcome__img{
+        width: auto;
+        max-height: 310px;
+    }
+}
+
+.text{
+    font-size: 18px;
+    line-height: 28px;
+}
+@media screen and (max-width:768px) {
+    .text{
+        font-size: 14px;
+        line-height: 18px;
+    }
+}
+
+
+.text_blue{
+    color: #2A2173;
+}
+
+.text_green{
+    color: #009570;
+}
+
+
+
+.item__title{
+    font-weight: 700;
+    font-size: 30px;
+    line-height: 100%;
+    margin-bottom: 8px;
+}
+@media screen and(max-width: 992p) {
+    .item__title{
+        font-size: 20px;
+        font-weight: 700;
+        margin-right: 8px;
+    }
+}
+
+
+.item__subtitle{
+    font-size: 16px;
+    line-height: 22px;
+}
+
+@media screen and(max-width: 992p) {
+    .item__subtitle{
+        font-size: 14px;
+        line-height: 20px;
+    }
+}
+
+
+
+.form-input{
+    display: block;
+
+    /* min-width: 252px; */
+    max-width: 400px;
+    width: 100%;
+
+    padding: 18px 16px;
+    box-sizing: border-box;
+
+    margin-bottom: 10px;
+
+    border: 1px solid #CFD1DF;
+    border-radius: 4px;
+
+    background: #fff;
+    
+    font-size: 18px;
+    line-height: 1.15;
+    text-transform: none;
+    
+    transition: .2s;
+}
+
+
+
+.hidden-scroller_x{
+    overflow-x: scroll;
+    scrollbar-color: #2A2173 #E8EDF9;
+
+    scrollbar-width: thin;
+}
+.hidden-scroller_y{
+    overflow-x: scroll;
+    scrollbar-color: #2A2173 #E8EDF9;
+}
+::-webkit-scrollbar{
+    height: 5px;
+
+}
+
+::-webkit-scrollbar-track{
+    background-color: #E8EDF9;
+    border-radius: 5px;
+    color: #2A2173;
+}
+::-webkit-scrollbar-thumb{
+    background-color: #2A2173;
+    border-radius: 5px;
+}

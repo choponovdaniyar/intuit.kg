@@ -1,0 +1,39 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        {% block head%}
+        {% endblock %}
+        <link rel="stylesheet" href="{% static 'css/index/admission.css' %}">
+        <link rel="stylesheet" href="{% static 'css/index/go-to-university.css' %}">
+        <link rel="stylesheet" href="{% static 'css/index/open-door-day.css' %}">
+        <link rel="stylesheet" href="{% static 'css/index/open-door-day-form.css' %}">
+        <link rel="stylesheet" href="{% static 'css/index/top.css' %}">
+        <link rel="stylesheet" href="{% static 'css/index/quiz.css' %}">
+        <link rel="stylesheet" href="{% static 'css/index/catalog.css' %}">
+        <link rel="stylesheet" href="{% static 'css/index/about.css' %}">
+    
+    
+        <link rel="stylesheet" href="{% static 'css/base/base.css' %}">
+        <link rel="stylesheet" href="{% static 'css/base/elems.css' %}">
+        <link rel="stylesheet" href="{% static 'css/base/header.css' %}">
+        <link rel="stylesheet" href="{% static 'css/base/footer.css' %}">
+        <link rel="stylesheet" href="{% static 'css/base/burger.css' %}">
+    </head>
+    <body>
+        {% block header%}
+        {% endblock %}
+        
+        <main> 
+            {% block main %}
+            {% endblock %}
+        </main>
+        
+        {% block footer %}
+        {% endblock %}
+        
+        {% block scripts %}
+        {% endblock %}
+        
+    </body>
+</html>

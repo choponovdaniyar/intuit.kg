@@ -1,0 +1,8 @@
+{% extends 'base.html' %}
+{% block main %}
+
+{% include 'news/blocks/news.html' %}
+{% include 'pagination.html' with page=page_obj %}
+
+{% endblock %}
+

@@ -1,0 +1,33 @@
+.partners{
+    background-color: #F3F6FD;
+
+    padding: 80px 0 105px;
+}
+@media screen and(max-width: 992px) {
+    .partners{
+        padding: 45px 0 52px;
+    }
+}
+@media screen and(max-width: 768px) {
+    .partners{
+        padding: 45px 0 40px;
+    }
+}
+.partners__content{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+
+}
+.partiners__title{
+    margin-bottom: 50px;
+}
+
+.partner__logo{
+    display: block;
+
+    height: 60px;
+    width: auto;
+
+    margin: 15px;
+}

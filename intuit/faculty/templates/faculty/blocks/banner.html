@@ -1,0 +1,32 @@
+<section class="banner">
+    <div class="container">
+        <div class="banner__content">
+            <h1 class="banner__title">
+                {{ title }}                   
+            </h1>
+            {% if details %}
+                <div class="banner__sector">
+                    {% for detail in details %}
+                        <div class="banner__box">
+                            <div class="banner__left">                  
+                                <img
+                                    src="{{ detail.image.url}}"
+                                    alt=""
+                                />
+                            </div>
+                            <div class="banner__right">
+                                <div class="banner__num">
+                                    {{ detail.numeric }}
+                                </div>
+                                <div class="banner__name">
+                                    {{ detail.title}}
+                                </div>
+                            </div>
+                        </div>               
+                    {% endfor %}          
+                </div>
+            {% endif %}
+            
+        </div>
+    </div>
+</section>

@@ -1,0 +1,37 @@
+{% load static%}
+<section class="news">
+    <div class="container">
+        <h2 class="news__main-title faculties__title">
+            {% if title %}
+                {{ title }}
+            {% else %}
+                Новости 
+            {% endif %}
+        </h2>
+        <div class="news__content">
+            {% for post in posts%}
+            <div class="news__item">
+                <div class="news__img--wrapper">
+                {% if post.banner %}
+                    <img src="{{ post.banner.url }}" alt="Баннер" class="news__img">
+                {% endif %}
+                </div>
+
+                <div class="news__text">
+                    <h3 class="news__title">
+                        {{ post.title }}
+                    </h3>
+                    <div class="news__description">
+                        {{ post.description|linebreaks }}
+                    </div>
+                    <div class="news__details">
+                        <span class="news__date">{{ post.date }}</span>
+                        <a href="/news/2022/4/20/ix-mezhdunarodnaya-nauchno-tehnicheskaya-konferenc/"
+                            class="news__more">подробнее...</a>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</section>

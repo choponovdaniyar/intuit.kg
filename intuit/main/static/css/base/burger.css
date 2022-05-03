@@ -1,0 +1,115 @@
+.burger{
+    position: relative;
+    right: 20px;
+}
+.burger_color .burger__btn {
+    border: 3px solid #00956F
+} 
+.burger_color .burger__burger,
+.burger_color .burger__burger:before,
+.burger_color .burger__burger:after,
+.burger_color .burger__exit:before,
+.burger_color .burger__exit:after {
+    background-color: #00956F;
+}
+
+
+
+.burger__btn {
+    position: relative;
+
+    display: block;
+    height: 40px;
+    width: 40px;
+    /* border: 3px solid #00956F */
+    border-radius: 0;
+    -webkit-transition: border-radius 300ms ease;
+    transition: border-radius 300ms ease;
+} 
+
+.burger__btn:hover {
+    border-radius: 50%;
+}
+
+.burger__btn.is-open .burger__burger {
+    opacity: 0;
+    -webkit-transform: translateX(45px);
+            transform: translateX(45px);
+}
+
+.burger__btn.is-open .burger__exit {
+    opacity: 1;
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
+}
+
+.burger__burger,
+.burger__burger:before,
+.burger__burger:after {
+    display: block;
+    content: '';
+    width: 18px;
+    height: 3px;
+    /* background-color: #00956F; */
+    position: absolute;
+}
+
+.burger__burger {
+    position: absolute;
+    left: 12px;
+    top: 18px;
+
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
+    opacity: 1;
+    -webkit-transition: opacity 300ms ease, -webkit-transform 300ms ease;
+    transition: opacity 300ms ease, -webkit-transform 300ms ease;
+    transition: opacity 300ms ease, transform 300ms ease;
+    transition: opacity 300ms ease, transform 300ms ease, -webkit-transform 300ms ease;
+}
+
+.burger__burger:before {
+    top: -8px;    
+}
+
+.burger__burger:after {
+    top: 8px;
+}
+
+.burger__exit:before,
+.burger__exit:after {
+    display: block;
+    content: '';
+    width: 22px;
+    height: 3px;
+    /* background-color: #00956F; */
+    position: absolute;
+}
+
+.burger__exit {
+    position: absolute;
+    top: 18px;
+    left: 10px;
+    -webkit-transform: translateX(-45px);
+            transform: translateX(-45px);
+    opacity: 0;
+    -webkit-transition: opacity 300ms ease, -webkit-transform 300ms ease;
+    transition: opacity 300ms ease, -webkit-transform 300ms ease;
+    transition: opacity 300ms ease, transform 300ms ease;
+    transition: opacity 300ms ease, transform 300ms ease, -webkit-transform 300ms ease;
+}
+
+.burger__exit:before {
+    -webkit-transform: rotate(45deg);
+            transform: rotate(45deg);
+}
+
+.burger__exit:after {
+    -webkit-transform: rotate(-45deg);
+            transform: rotate(-45deg);
+}
+
+
+
+
+

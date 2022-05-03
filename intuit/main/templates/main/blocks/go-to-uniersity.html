@@ -1,0 +1,20 @@
+<div class="go-to-university margin-bottom">
+    <div class="container">
+        <div class="go-to-university__inner">
+            <div class="h2 text_blue go-to-university__title">
+                Поступи в университет «МУИТ»
+            </div>   
+            <form action="" method="post">
+                {% csrf_token %}
+                {% for field in form%}
+                    {{ field }}
+                {% endfor %}
+                <div class="button flex-button bc_green">
+                    <button class="button bc_green" type="submit">Отправить</button>
+                </div>
+            </form>
+        </div>
+        
+        
+    </div>
+</div>

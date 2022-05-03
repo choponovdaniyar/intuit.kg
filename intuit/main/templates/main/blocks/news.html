@@ -1,0 +1,30 @@
+<section class="news margin-bottom">
+    <div class="container">
+        <div class="news__title">
+            <div class="news__title-text h2 text_blue">Новостной блог</div> 
+            <div class="news__page-more a_blue">
+                <a href="/news" class="a">
+                    все новости
+                </a>
+                <div class="news__arrow"></div>
+            </div>
+        </div>
+        <div class="news__content hidden-scroller_x">
+            {% for post in news %}
+            <a href="{{ post.get_absolute_url}}" class="a">
+                <div class="news__post">
+                    <div class="news__post-img">
+                        <img src="{{ post.banner.url}}" alt="" class="news__post-img-inner" width="100%" height="100%">
+                    </div>
+                    <div class="news__post-datetime text_blue">
+                        {{post.date}}
+                    </div>
+                    <div class="news__post-title text_blue">
+                        {{post.title}}
+                    </div>
+                </div>
+            </a>
+            {% endfor %}
+        </div>
+    </div>
+</section>

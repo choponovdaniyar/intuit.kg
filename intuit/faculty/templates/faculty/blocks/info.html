@@ -1,0 +1,48 @@
+<section class="info">
+    <div class="container">
+        <div class="info__content">
+            {% if info %}
+                <div class="info__top">
+                    <div class="info__left">
+                        <h2 class="info__title">
+                            У нас есть все для построения успешной карьеры
+                        </h2>
+                        <div class="info__sector">
+                            {% for detail in info %}
+                                <div class="info__box">
+                                    <div class="info__num">{{detail.numeric}}</div>
+                                    <div class="info__details">{{detail.title}}</div>
+                                </div>
+                            {% endfor %}
+                        </div>
+                    </div>
+                    <div class="info__right">
+                        <iframe src="https://www.youtube.com/embed/diIcqVN1Dag" title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="" width="560" height="315" frameborder="0"></iframe>
+                    </div>
+                </div>
+            {% endif %}
+            
+            <div class="info__bottom">
+                <div class="info__sector">
+                    
+                        {% for doc in documents %}
+                            <div class="info__doc">
+                            
+
+                                <div class="info__name">
+                                    {{ doc.title}}
+                                </div>
+                                <a href="{{ doc.document.url }}"  target="_blank">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" class="svg replaced-svg">
+                                        <path d="M5 12H19" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+                                        <path d="M12 5L19 12L12 19" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+                                    </svg>
+                                </a>
+                            </div>
+                        {% endfor %}
+                        
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

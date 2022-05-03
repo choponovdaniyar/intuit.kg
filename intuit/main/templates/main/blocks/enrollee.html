@@ -1,0 +1,31 @@
+<section class="enrollee">
+    <div class="container">
+        <div class="enrollee__content">
+            <h1 class="enrollee__title">
+                Абитуриентам
+            </h1>
+
+            <h2 class="enrollee__subtitle">
+                Прием документов в онлайн и офлайн режимах
+            </h2>
+            
+            <p class="enrollee__descr">
+                    Прием абитуриентов осуществляется с и без результатов ОРТ. МУИТ проводит вступительные 
+                испытания только на творческие направления по предмету «Рисунок»
+            </p>
+            
+            <div class="enrollee__form">
+                Получить консультацию приемной комиссии
+                <form class="hero__form" method="post">
+                    {% csrf_token %}
+        
+                    {{ form.user }}
+                    {{ form.phone }}
+                    <button class="btn__green" type="submit">Подать заявку</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>
+  
+  

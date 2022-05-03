@@ -1,0 +1,13 @@
+<a href="{{ post.get_absolute_url}}" class="a">
+    <div class="post-item.css">
+        <div class="post-item.css-img">
+            <img src="{{ post.banner.url}}" alt="" class="post-item.css-img-inner" width="100%" height="100%">
+        </div>
+        <div class="post-item.css-datetime text_blue">
+            {{post.date}}
+        </div>
+        <div class="post-item.css-title text_blue">
+            {{post.title}}
+        </div>
+    </div>
+</a>

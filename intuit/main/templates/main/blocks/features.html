@@ -1,0 +1,31 @@
+    <section class="features">
+    <div class="container">
+      <div class="features__content">
+        <h2 clas s="features__title">Специальные возможности</h2>
+        {% for abilities in special_abilities %}
+            <div class="features__item">
+                <div class="features__left">
+                    <div class="features__icon"></div>
+                </div>
+                <div class="features__right">
+                    <h3 class="features__name">{{ abilities.title }}</h3>
+                    {% if abilities.description %}
+                        <p class="features__descr">
+                            {{ abilities.description }}
+                        </p>
+                    {% endif %}
+                    {% if abilities.details.all %}
+                    <ul class="features__list">
+                        {% for detail in  abilities.details.all %}
+                            <li class="features__detail">{{ detail }}</li>
+                        {% endfor %}
+                    </ul>
+                    {% endif %}
+                </div>
+                
+            </div>
+        {% endfor %}
+
+      </div>
+    </div>
+</section>

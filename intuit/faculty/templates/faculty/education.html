@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+
+{% block main %}
+{% include 'faculty/blocks/banner.html' with details=title.detail.all %}
+{% include 'faculty/blocks/detail.html' with description=title.description %}
+{% include 'faculty/blocks/eduform.html' with eduform=title.eduform.all %}
+{% include 'faculty/blocks/plofiles.html' with edu_title=title.subtitle profiles=profiles %}
+{% include 'faculty/blocks/info.html' with info=title.info.all documents=title.documents.all %}
+{% include 'main/blocks/features.html' with special_abilities=title.special_abilities.all %}
+{% include 'main/blocks/admission.html' with form=form%}
+{% endblock %}

@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+
+{% block main %}
+{% include 'faculty/blocks/banner.html' with details=profile.details.all %}
+
+{% include 'faculty/blocks/detail.html' with description=profile.description %}
+
+{% if profile.work_places %}
+    {% include 'faculty/blocks/workplace.html' with description=profile.work_places %}
+{% endif%}
+
+{% include 'faculty/blocks/courses.html' with courses=profile.courses.all %}
+{% include 'faculty/blocks/skills.html' with skills=profile.skills.all %}
+
+{% include 'faculty/blocks/will.html' with professions=profile.professions.all %}
+
+{% include 'main/blocks/admission.html' with form=form %}
+
+{% include 'faculty/blocks/info.html' with info=title.info.all documents=profile.documents.all %}
+
+{% endblock %}

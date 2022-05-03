@@ -1,0 +1,16 @@
+<div class="partners">
+    <div class="container">
+        <div class="partiners__title h2 text_blue">
+            Наши выпускники строят карьеру в ведущих компаниях
+        </div>
+        <div class="partners__content">
+            {% for company in companies %}
+                <img src="{{ company.logo.url }}" 
+                    alt="{{company.title}}"
+                    title="{{comany.title}}"     
+                    class="partner__logo"
+                >    
+            {% endfor %}
+        </div>
+    </div>
+</div>

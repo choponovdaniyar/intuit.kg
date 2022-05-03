@@ -1,0 +1,21 @@
+<section class="eduForm">
+    <div class="container">
+        <div class="eduForm__content">
+                {% for  form in eduform %}
+                    {% if form.title == 'Очная' %}
+                    <div class="eduForm__item green">
+                    {% else %}      
+                    <div class="eduForm__item red">
+                    {% endif %}              
+                        <img src="{{ form.icon.image.url}}" alt="Photo">
+                        <h2 class="eduForm__title">
+                            {{ form.title }}
+                        </h2>
+                        <p class="eduForm__descr">
+                            {{ form.description }}
+                        </p>
+                    </div>
+                {% endfor %}  
+        </div>
+    </div>
+</section>

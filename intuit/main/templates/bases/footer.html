@@ -1,0 +1,344 @@
+{% load static %}
+<footer class="footer">
+    <div class="container">
+        <div class="footer__aside">
+            <div class="footer__logo logo">
+                <img src="{% static 'img/logo.png' %}" alt="" class="logo footer__logo">
+            </div>
+            <div class="footer__networks networks">
+                <div class="networks__title">
+                    Мы в соцсетях
+                </div>
+                <div class="networks__content">
+                    <div class="network">
+                        <a href="" title="WhatsApp">
+                            <img src="{% static 'img/icons/whatsapp-icon.svg' %}">
+                        </a>
+                    </div>
+                    <div class="network">
+                        <a href="" title="Vk">
+                            <img src="{% static 'img/icons/vk-icon.svg' %}">
+                        </a>
+                    </div>
+                    <div class="network">
+                        <a href="" title="YouTube">
+                            <img src="{% static 'img/icons/yotube-icon.svg' %}">
+                        </a>
+                    </div>
+                    <div class="network">
+                        <a href="" title="Telegram">
+                            <img src="{% static 'img/icons/telegram-icon.svg' %}">
+                        </a>
+                    </div>    
+                </div>
+                
+            </div>
+        </div>
+        {% if faculties %}
+        <div class="footer__faculties">
+            <nav class="footer__nav-title nav-title">
+                <a class="a a_green">
+                    Институты и колледжи
+                </a>            
+                <div class="footer__nav-title__icon nav-title__icon"></div>
+            </nav>
+            <div class="footer__faculties-content">
+                    {% for faculty in faculties %}
+                <nav class="footer__faculty footer__nav nav">
+                    <a class="a a_none-color" href="{{ faculty.get_absolute_url }}">
+                            {{ faculty.title.lower|capfirst }}
+                    </a>
+                </nav>
+                    {% endfor %}
+            </div>
+            
+        </div>
+        {% endif %}
+        <div class="footer__educations">
+            <nav class="header__education education"><a href="{% url 'main:enrollee' %}" class="a a_green">Абитуриентам</a></nav>
+            <nav class="footer__education education"><a href="{% url 'faculty:faculties' %}" class="a a_green">Институты</a></nav>
+            <nav class="footer__education education"><a href="{% url 'faculty:collage' %}" class="a a_green">Колледжи</a></nav>
+            <nav class="footer__education education"><a href="{% url 'faculty:education' education='bakalavriat' %}" class="a a_green">Бакалавриат</a></nav>
+            <nav class="footer__education education"><a href="{% url 'faculty:education' education='magistratura' %}" class="a a_green">Магистратура</a></nav>
+            <nav class="footer__education education"><a href="{% url 'faculty:education' education='aspirantura' %}" class="a a_green">Аспирантура</a></nav>
+            <nav class="footer__education education"><a href="{% url 'faculty:education' education='kursy' %}" class="a a_green">Курсы</a></nav>
+            <nav class="footer__education education"><a href="{% url 'news:new_list' %}" class="a a_green">Новости</a></nav>
+            <nav class="footer__education education"><a href="" class="a a_green">Enactus</a></nav>
+        </div>    
+        
+        <div class="footer__navbar-levels">
+            <div class="footer__contacts">
+                <div class="contacts__addresses">
+                    <div class="footer__contacts-title">
+                        Адрес:
+                    </div>
+                    <div class="address">
+                        <div class="address__city">
+                            г. Бишкек
+                        </div>
+                        <div class="address__text">
+                            ул. Анкара 1/17
+                        </div>  
+                    </div>
+                </div>
+                <div class="footer__comission comission">
+                    <div class="footer__contacts-title">
+                        Приемная комиссия:
+                    </div>
+                    <div class="work-days">
+                        <div class="work-day">
+                            <div class="work-day__name">
+                                Пн-пт
+                            </div>
+                            <div class="work-day__time">
+                                09:00 — 20:00
+                            </div>    
+                        </div>
+                        
+                        <div class="work-day">
+                            <div class="work-day__name">
+                                Сб
+                            </div>
+                            <div class="work-day__time">
+                                09:00 — 19:00
+                            </div>    
+                        </div>
+
+                        <div class="work-day">
+                            <div class="work-day__name">
+                                Вс
+                            </div>
+                            <div class="work-day__time">
+                                09:00 — 17:00
+                            </div>    
+                        </div>
+                    </div>
+                    <div class="footer__phones phones">    
+                        <div class="footer__phone phone">
+                            <div class="phone__left">
+                                <img src="{% static 'img/icons/phone-icon.svg' %}"alt="">
+                            </div>
+                            <div class="phone__text">
+                                <a class="a a_green" href="tel:74958001001">+996 312 88 40 96</a>
+                            </div>
+                        </div>
+                        <!-- <div class="footer__phone phone">
+                            <div class="phone__left">
+                                <img src="./img/icons/phone-icon.svg" alt="">
+                            </div>
+                            <div class="phone__text">
+                                <a class="a a_green"href="tel:74958001001">+996 312 88 40 96</a>
+                            </div>
+                            <div class="phone__right">
+                                <img src="./img/icons/24-7-icon.svg" alt="">
+                            </div>
+                        </div> -->
+                    </div>
+                </div>               
+                <div class="for-students">
+                    <div class="footer__contacts-title">
+                        Для студентов:
+                    </div>
+                    <div class="footer__phones phones">    
+                        <div class="footer__phone phone">
+                            <div class="phone__left">
+                                <img src="{% static 'img/icons/phone-icon.svg' %}"alt="">
+                            </div>
+                            <div class="phone__text">
+                                <a class="a a_green" href="tel:74958001001">+996 312 88 40 96</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="footer__button button flex-button bc_green">
+                    <a href="mailto:intuit@intuit.kg" class="a">
+                        Задать вопрос
+                    </a>
+                </div>
+            </div>
+            <nav class="footer__navbar-section">
+                <div class="footer__navbar">
+                    <nav class="footer__nav-title nav-title">
+                        <a class="a a_green">
+                            абитуриентам    
+                        </a>            
+                        <div class="footer__nav-title__icon nav-title__icon"></div>
+
+                    </nav>
+                    <nav class="footer__nav nav">
+                        <a class="a a_blue">
+                            Специальности
+                        </a>
+                    </nav>
+                    <nav class="footer__nav nav">
+                        <a class="a a_blue">
+                            Институты
+                        </a>
+                    </nav>
+                    <nav class="footer__nav nav">
+                        <a class="a a_blue">
+                            Приемная комиссия
+                        </a>
+                    </nav>
+                    <nav class="footer__nav nav">
+                        <a class="a a_blue">
+                            Образование для военнослужащих 
+                        </a>
+                    </nav>
+                    <nav class="footer__nav nav">
+                        <a class="a a_blue">
+                            Отсрочка от армии
+                        </a>
+                    </nav>
+                    <nav class="footer__nav nav">
+                        <a class="a a_blue">
+                            Отзывы студентов
+                        </a>
+                    </nav>
+                    <nav class="footer__nav nav">
+                        <a class="a a_blue">
+                            Выпускники
+                        </a>
+                    </nav>
+                    <nav class="footer__nav nav">
+                        <a class="a a_blue">
+                            Документы по правилам приема
+                        </a>
+                    </nav>
+                    <nav class="footer__nav nav">
+                        <a class="a a_blue">
+                            Оплата обучения
+                        </a>
+                    </nav>
+                    <nav class="footer__nav nav">
+                        <a class="a a_blue">
+                            Целевое обучение
+                        </a>
+                    </nav>
+                    
+                    
+                </div>
+
+                <div class="footer__navbar">
+                    <nav class="footer__nav-title nav-title">
+                        <a class="a a_blue">
+                            об университете
+                        </a>
+                        <div class="footer__nav-title__icon nav-title__icon"></div>
+                    </nav>
+                    <nav class="footer__nav nav">
+                        <a class="a a_blue">
+                            Жизнь Университета
+                        </a>
+                    </nav>
+                    <nav class="footer__nav nav">
+                        <a class="a a_blue">
+                            Региональное подразделения 
+                        </a>
+                    </nav>    
+                    <nav class="footer__nav nav">
+                        <a class="a a_blue">
+                            Почетные доктора
+                        </a>
+                    </nav>
+                    <nav class="footer__nav nav">
+                        <a class="a a_blue">
+                            Почетные профессора
+                        </a>
+                    </nav>
+                    <nav class="footer__nav nav">
+                        <a class="a a_blue">
+                            Совет по качеству
+                        </a>
+                    </nav>
+                    <nav class="footer__nav nav">
+                        <a class="a a_blue">
+                            История
+                        </a>
+                    </nav>                
+                    <nav class="footer__nav nav">
+                        <a class="a a_blue">
+                            Образование AVN, Moodle
+                        </a>
+                    </nav> 
+                    <nav class="footer__nav nav">
+                        <a class="a a_blue">
+                            Расписание
+                        </a>
+                    </nav> 
+                    <nav class="footer__nav nav">
+                        <a class="a a_blue">
+                            Рейтинг
+                        </a>
+                    </nav> 
+                    <nav class="footer__nav nav">
+                        <a class="a a_blue">
+                            Медиацентр
+                        </a>
+                    </nav> 
+                    <nav class="footer__nav nav">
+                        <a class="a a_blue">
+                            Новостной блог
+                        </a>
+                    </nav> 
+                    <nav class="footer__nav nav">
+                        <a class="a a_blue">
+                            Выпускники
+                        </a>
+                    </nav> 
+                    <nav class="footer__nav nav">
+                        <a class="a a_blue">
+                            Партнеры - работодатели
+                        </a>
+                    </nav> 
+                    <nav class="footer__nav nav">
+                        <a class="a a_blue">
+                            Контакты
+                        </a>
+                    </nav>
+                </div>
+                <div class="footer__navbar">
+                    <nav class="footer__nav-title nav-title">
+                        <a class="a a_blue">
+                            enactus
+                        </a> 
+                        <div class="footer__nav-title__icon nav-title__icon"></div>
+                    </nav>
+                    <nav class="footer__nav nav">
+                        <a class="a a_blue">
+                            Школа креативного предпринимательства
+                        </a>
+                    </nav>
+                </div>
+
+
+                <div class="footer__navbar">
+                    <nav class="footer__nav-title nav-title">
+                        <a class="a a_green">
+                            Рейтинг
+                        </a>
+                        <div class="footer__nav-title__icon nav-title__icon"></div>
+                    </nav>
+                    <nav class="footer__nav nav">
+                        <a class="a a_blue">
+                            Рейтинг Университета
+                        </a>
+                    </nav>
+                    <nav class="footer__nav nav">
+                        <a class="a a_blue">
+                            Рейтинг ППС
+                        </a>
+                    </nav>
+                    <nav class="footer__nav nav">
+                        <a class="a a_blue">
+                            Электронные документы рейтингов...  
+                        </a>
+                    </nav>
+                </div>  
+            </nav>
+        </div>
+    </div>
+</footer>
+
+<script src="{% static 'js/burger.js' %}"></script>
+<script src="{% static 'js/accordion.js' %}"></script>

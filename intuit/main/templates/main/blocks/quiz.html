@@ -1,0 +1,168 @@
+{% load static %}
+<div class="quiz" style="background: rgb(214, 214, 214); background-repeat: no-repeat;background-position: center;">
+    <div class="quiz container">
+        <div class="container">
+
+            <div class="quiz__start">
+                <div class="h1 quiz__title text_blue">
+                    Подбери программу обучения
+                </div>
+                <div class="button  flex-button quiz__button bc_green">Начать</div>
+                <div class="quiz__welcome welcome">
+                    <img src="{% static 'img/header/welcome.png' %}" alt="" class="welcome__img">
+                </div>
+            </div>
+
+
+            <div class="quiz__items">
+                <div class="quiz__item">
+                    <div class="h1 quiz__title text_blue">
+                        Вы склонны больше к профессиям?
+                    </div>
+                    <div class="quiz__quition  text_blue">
+                        <div class="quiz__quition-left"> 
+                        </div>
+                        <div class="quiz__quition-text">
+                            Гуманитарным
+                        </div> 
+                    </div>
+                    <div class="quiz__quition  text_blue">
+                        <div class="quiz__quition-left"> 
+                        </div>
+                        <div class="quiz__quition-text">
+                            Техническим
+                        </div>       
+
+                    </div>
+                </div>
+                <div class="quiz__item">
+                    <div class="h1 quiz__title text_blue">
+                        Какое направление обучения вас интересует?
+                    </div>
+                    <div class="quiz__quition text_blue">
+                        <div class="quiz__quition-left"> 
+                        </div>
+                        <div class="quiz__quition-text">
+                            Колледж
+                        </div> 
+                    </div>
+                    <div class="quiz__quition text_blue">
+                        <div class="quiz__quition-left"> 
+                        </div>
+                        <div class="quiz__quition-text">
+                            Бакалавриат
+                        </div> 
+                    </div>      
+                    <div class="quiz__quition text_blue">
+                        <div class="quiz__quition-left"> 
+                        </div>
+                        <div class="quiz__quition-text">
+                            Магистратура
+                        </div> 
+                    </div>      
+                    <div class="quiz__quition text_blue">
+                        <div class="quiz__quition-left"> 
+                        </div>
+                        <div class="quiz__quition-text">
+                            Аспирантура
+                        </div>
+                    </div>      
+                    <div class="quiz__quition text_blue">
+                        <div class="quiz__quition-left"> 
+                        </div>
+                        <div class="quiz__quition-text">
+                            Бизнес образование
+                        </div> 
+                    </div> 
+                    <div class="quiz__quition text_blue">
+                        <div class="quiz__quition-left"> 
+                        </div>
+                        <div class="quiz__quition-text">
+                            Курсы
+                        </div> 
+                    </div> 
+                                               
+                </div>
+                <div class="quiz__item">
+                    <div class="h1 quiz__title text_blue">
+                        Какой формат обучения вам подходит?
+                    </div>
+                    <div class="quiz__quition text_blue">
+                        <div class="quiz__quition-left"> 
+                        </div>
+                        <div class="quiz__quition-text">
+                            Очно 
+                        </div> 
+                    </div>
+                    <div class="quiz__quition  text_blue">
+                        <div class="quiz__quition-left"> 
+                        </div>
+                        <div class="quiz__quition-text">
+                            Заочно
+                        </div>                             
+                    </div>
+                </div>
+                <div class="quiz__item">
+                    <div class="h1 quiz__title text_blue">
+                        Вас интересуют бюджетные места?
+                    </div>
+                    <div class="quiz__quition text_blue">
+                        <div class="quiz__quition-left"> 
+                        </div>
+                        <div class="quiz__quition-text">
+                            Да
+                        </div> 
+                    </div>
+                    <div class="quiz__quition  text_blue">
+                        <div class="quiz__quition-left"> 
+                        </div>
+                        <div class="quiz__quition-text">
+                            Нет
+                        </div>                             
+                    </div>
+                </div>
+                <div class="quiz__item">
+                    <div class="h1 quiz__title text_blue">
+                        Нужно ли трудоустройство?
+                    </div>
+                    <div class="quiz__quition text_blue">
+                        <div class="quiz__quition-left"> 
+                        </div>
+                        <div class="quiz__quition-text">
+                            Да
+                        </div> 
+                    </div>
+                    <div class="quiz__quition  text_blue">
+                        <div class="quiz__quition-left"> 
+                        </div>
+                        <div class="quiz__quition-text">
+                            Нет
+                        </div>                             
+                    </div>
+                </div>             
+                <div class="quiz__item quiz__item-form">
+                    <div class="h1 quiz__title text_blue">
+                        Специалист приёмной комиссии подобрал вам программу  
+                    </div>
+                    <div class="quiz__quition-form text_blue">
+                        <input class="form-input" type="text" placeholder="Ваше имя">
+                        <input class="form-input" type="text" inputmode="tel" placeholder="Ваш телефон">
+                        <input class="form-input" type="text" placeholder="Ваш e-mail">
+                        <div class="button  flex-button quiz__button quiz__sumbit">Отправить</div>                     
+                    </div>
+                </div>       
+            </div>
+
+            <form method="post" class="quiz__form form" >
+                {% for field in form %}
+                    {{ field}}
+                {% endfor %}
+
+                <button type="submit">Начать</button>          
+                {% csrf_token %}         
+            </form>
+            
+        </div>
+    </div>
+</div>   
+<script src="{% static 'js/header/quiz.js' %}"></script>

@@ -1,0 +1,6 @@
+{% extends 'base.html' %}
+
+{% block main %}
+    {% include 'faculty/blocks/faculties.html' %}
+    {% include 'main/blocks/admission.html' with form=admission%}
+{% endblock %}

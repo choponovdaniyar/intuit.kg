@@ -1,0 +1,105 @@
+{% load static%}
+<section class="news margin-bottom">
+    <div class="container">
+        <div class="news__title h2 text_blue">
+            {% if title %}
+                {{ title }}
+            {% else %}
+                Новости 
+            {% endif %}
+        </div>
+        <div class="news__content">
+            {% for post in posts%}
+                    <div class="news__last-post">
+                        <div class="news__last-post-img">
+                            <a href="{{ post.get_absolute_url }}" class="a">
+                                <img src="{{ post.banner.url}}" alt="" class="news__last-post-img-inner">
+                            </a>
+                            
+                        </div>
+                        <div class="news__last-post-content">
+                            
+                            <div class="news__last-post-subtitle a_blue">
+                                
+                                {% for category in post.categories.all %}
+                                    <span>
+                                        <a href="{{ category.slug }}" class="a a_blue">
+                                            {% if forloop.counter != post.categories.all.count %}
+                                                {{ category }},
+                                            {% else %}
+                                                {{ category }}
+                                            {% endif %}
+                                        </a>
+                                    </span>    
+                                
+                                {% endfor %}
+                            </div>
+                            <div class="news__last-post-title h3 text_blue">
+                                <a href="{{ post.get_absolute_url }}" class="a">
+                                    {{ post.title }}    
+                                </a>
+                                
+                            </div>
+                            <div class="news__last-post-description">
+                                {{ post.description|truncatewords:30|linebreaks  }}
+                            </div>
+                            <div class="news__last-post-footer">
+                                <div class="news__last-post-datetime">
+                                    {{ post.date}}
+                                </div>
+                                <a href="{{ post.get_absolute_url }}" class="a a_blue">
+                                    <div class="news__last-post-button button classic-button">
+                                        читать полностью..
+                                    </div>
+                                </a>    
+                            </div>
+                            
+                        </div>
+                    </div>
+                    
+            <div class="top__post">
+
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</section>
+
+
+
+<!-- <section class="news">
+    <div class="container">
+        <h2 class="news__main-title faculties__title">
+            {% if title %}
+                {{ title }}
+            {% else %}
+                Новости 
+            {% endif %}
+        </h2>
+        <div class="news__content">
+            {% for post in posts%}
+            <div class="news__item">
+                <div class="news__img--wrapper">
+                {% if post.banner %}
+                    <img src="{{ post.banner.url }}" alt="Баннер" class="news__img">
+                {% endif %}
+                </div>
+
+                <div class="news__text">
+                    <h3 class="news__title">
+                        {{ post.title }}
+                    </h3>
+                    <div class="news__description">
+                        {{ post.description|linebreaks }}
+                    </div>
+                    <div class="news__details">
+                        <span class="news__date">{{ post.date }}</span>
+                        <a href="/news/2022/4/20/ix-mezhdunarodnaya-nauchno-tehnicheskaya-konferenc/"
+                            class="news__more">подробнее...</a>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</section> -->

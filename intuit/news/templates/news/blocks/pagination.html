@@ -1,0 +1,27 @@
+<div class="pagination margin-bottom">
+    <div class="container">
+        <div class="pagination__paginator">
+            {% if page.number > 2 %}
+                <a href="?page=1" class="pagination__page a">1</a>
+            {% endif %}
+            {% if page.number > 3 %}
+                <a href="?page={{page.previous_page_number|add:'-1'}}"  class="pagination__page a">...</a>
+            {% endif %}
+            {% if page.has_previous %}
+                <a href="?page={{page.previous_page_number}}" class="pagination__page a">{{page.previous_page_number}}</a>
+            {% endif %}
+
+                <a href="?page={{page.number}}" class="pagination__page a">{{page.number}}</a>
+            
+            {% if page.has_next %}
+                <a href="?page={{page.next_page_number}}" class="pagination__page a">{{page.next_page_number}}</a>
+            {% endif %}
+            {% if page.number|add:"2" < page.paginator.num_pages%}
+                <a href="?page={{page.next_page_number|add:'1'}}" class="pagination__page a">...</a>
+            {% endif %}
+            {% if page.number|add:"1" < page.paginator.num_pages %}
+                <a href="?page={{page.paginator.num_pages }}" class="pagination__page a">{{page.paginator.num_pages }}</a>
+            {% endif %}
+        </div>
+    </div>
+</div>

@@ -1,0 +1,38 @@
+
+
+
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Главная</title>
+
+    <link rel="stylesheet" href="{% static 'css/news/news.css' %}">
+    <link rel="stylesheet" href="{% static 'css/news/pagination.css' %}">
+
+    <link rel="stylesheet" href="{% static 'css/base/base.css' %}">
+    <link rel="stylesheet" href="{% static 'css/base/elems.css' %}">
+    <link rel="stylesheet" href="{% static 'css/base/header.css' %}">
+    <link rel="stylesheet" href="{% static 'css/base/footer.css' %}">
+    <link rel="stylesheet" href="{% static 'css/base/burger.css' %}">
+
+
+    
+
+</head>
+<body>
+    {% include 'bases/header.html'%}
+    <main class="margin-top">       
+        {% include 'news/blocks/news.html' %}
+        {% include 'news/blocks/pagination.html' with page=page_obj %}
+    </main>
+
+    {% include 'bases/footer.html' %}
+
+</body>
+</html>
+
+

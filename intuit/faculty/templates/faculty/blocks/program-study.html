@@ -1,0 +1,22 @@
+<div class="program-study margin-top margin-bottom">
+    <div class="container text_blue">
+        <div class="program-study__title h2 ">
+            Что вы будете изучать
+        </div>
+        <div class="program-study__items">
+            {% for skill in skills %}
+                <div class="program-study__item">
+                    <img 
+                        class="program-study__item-img"
+                        src="https://synergy.ru/assets/components/phpthumbof/cache/peter_stumpf_fhzepxtti_y_unsplash.0c048963fc5f348f8bc258669040891f.jpg" 
+                        alt=""
+                    >
+                    <div class="program-study__item-title h3">{{ skill.title }}</div>
+                    <div class="program-study__item-text">
+                        {{ skill.description|safe|linebreaks }}
+                    </div>    
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+</div>

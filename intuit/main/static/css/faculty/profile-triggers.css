@@ -1,0 +1,10 @@
+.profile-triggers{
+}
+.profile-triggers__inner{
+    display: flex;
+    padding: 30px 0;
+}
+.profile-trigger{
+    max-width: 300px;
+    margin-right: 40px;
+}

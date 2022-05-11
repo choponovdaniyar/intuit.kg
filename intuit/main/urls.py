@@ -7,7 +7,8 @@ app_name = "main"
 
 urlpatterns = [
     path("", views.main, name="main"),
-    path("enrollee/", views.enrollee, name="enrollee")
+    path("enrollee/", views.enrollee, name="enrollee"),
+    path("selection-committee", views.selection_committee, name="selection-committee")
 ]
 
 

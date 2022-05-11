@@ -1,0 +1,40 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Приемная комиссия</title>
+
+    <link rel="stylesheet" href="{% static 'css/selection-committee/selection-committee-intro.css' %}">
+
+
+    <link rel="stylesheet" href="{% static 'css/base/about.css' %}">
+    <link rel="stylesheet" href="{% static 'css/base/docs.css' %}">
+    <link rel="stylesheet" href="{% static 'css/base/diploms.css' %}">
+    <link rel="stylesheet" href="{% static 'css/base/catalog.css' %}">
+    <link rel="stylesheet" href="{% static 'css/base/programs.css' %}">
+    <link rel="stylesheet" href="{% static 'css/base/go-to-university.css' %}">
+    <link rel="stylesheet" href="{% static 'css/base/base.css' %}">
+    <link rel="stylesheet" href="{% static 'css/base/elems.css' %}">
+    <link rel="stylesheet" href="{% static 'css/base/header.css' %}">
+    <link rel="stylesheet" href="{% static 'css/base/footer.css' %}">
+    <link rel="stylesheet" href="{% static 'css/base/burger.css' %}">
+ 
+
+    
+
+</head>
+<body>
+    {% include 'bases/header.html'%}
+    <main>   
+        {% include 'main/blocks/selection-committee-intro.html' %}
+        {% include 'bases/go-to-uniersity.html' with form=go_to %}
+        {% include 'bases/programs.html' with profiles=programs %}
+    </main>
+
+    {% include 'bases/footer.html' %}
+
+</body>
+</html>

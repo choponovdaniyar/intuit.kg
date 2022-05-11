@@ -35,7 +35,7 @@
   <style type="text/css">
    <![CDATA[
     @font-face { font-family:"Arial";font-variant:normal;font-style:normal;font-weight:bold;src:url("#FontID0") format(svg)}
-    .fil0 {fill:#EBECEC}
+    .fil0 {fill:#000}
     .fnt2 {font-weight:bold;font-size:1486.22px;font-family:'Arial'}
     .fnt0 {font-weight:bold;font-size:1682.11px;font-family:'Arial'}
     .fnt1 {font-weight:bold;font-size:2517.87px;font-family:'Arial'}

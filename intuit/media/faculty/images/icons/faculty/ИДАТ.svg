@@ -6,9 +6,9 @@
   <style type="text/css">
    <![CDATA[
     .str0 {stroke:#EBECEC;stroke-width:100}
-    .fil1 {fill:none}
-    .fil0 {fill:#EBECEC}
-    .fil2 {fill:#EBECEC;fill-rule:nonzero}
+    .fil1 {fill:#000}
+    .fil0 {fill:#000}
+    .fil2 {fill:#000;fill-rule:nonzero}
    ]]>
   </style>
  </defs>

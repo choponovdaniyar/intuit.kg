@@ -1,0 +1,16 @@
+.selection-committee-intro{
+    padding: 40px;
+}
+
+.selection-committee-intro__title{
+    margin-bottom: 20px;
+}
+
+.selection-committee-intro__text{
+    width: 90%;
+}
+@media screen and (max-width: 768px) {
+    .selection-committee-intro__text{
+        width: auto;
+    }   
+}

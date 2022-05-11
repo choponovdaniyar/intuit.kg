@@ -1,0 +1,22 @@
+<div class="profile-program ">
+    <div class="container">
+        <div class="profile-program__title h2 text_blue">
+            Учебная программа
+        </div>
+        <div class="profile-program__items text_blue">
+            {% for program in programs %}
+                <div class="profile-program__item">
+                    <div class="profile-program__item-title h3">
+                        {{ forloop.counter}}-й курс
+                    </div>
+                    <div class="profile-program__item-text">
+                        <p>
+                            {{ program.description|linebreaks}}
+                        </p>
+                    </div>
+                </div>
+            {% endfor %}
+
+        </div>
+    </div>    
+</div>

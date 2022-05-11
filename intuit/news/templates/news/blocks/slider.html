@@ -1,0 +1,37 @@
+<!-- Slider main container -->
+<div class="container swiper">
+    <!-- Additional required wrapper -->
+    <div class="swiper-wrapper">
+      <!-- Slides -->
+        {% for img in images %}  
+            <div class="swiper-slide">
+                <img src='{{img.image.url}}' alt="{{ img.title}}"  class="swiper-img">
+            </div>
+        {% endfor %}
+        <div class="swiper-slide">
+            <img src="https://iaeee.net.kg/wp-content/uploads/2022/04/photo_2022-03-13_15-03-31.jpg" alt="" class="swiper-img">
+        </div>
+        <div class="swiper-slide">
+            <img src="https://iaeee.net.kg/wp-content/uploads/2022/04/photo_2022-03-13_15-03-31.jpg" alt="" class="swiper-img">
+        </div>
+        <div class="swiper-slide">
+            <img src="https://iaeee.net.kg/wp-content/uploads/2022/04/photo_2022-03-13_15-03-31.jpg" alt="" class="swiper-img">
+        </div>
+        <div class="swiper-slide">
+            <img src="https://iaeee.net.kg/wp-content/uploads/2022/04/photo_2022-03-13_15-03-31.jpg" alt="" class="swiper-img">
+        </div>
+        <div class="swiper-slide">
+            <img src="https://iaeee.net.kg/wp-content/uploads/2022/04/photo_2022-03-13_15-03-31.jpg" alt="" class="swiper-img">
+        </div>
+    </div>
+    <!-- If we need pagination -->
+    <div class="swiper-pagination"></div>
+  
+    <!-- If we need navigation buttons -->
+    <div class="swiper-button-prev"></div>
+    <div class="swiper-button-next"></div>
+  
+    <!-- If we need scrollbar -->
+    <div class="swiper-scrollbar"></div>
+</div>
+  

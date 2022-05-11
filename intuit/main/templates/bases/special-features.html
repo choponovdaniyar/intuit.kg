@@ -1,0 +1,30 @@
+{% load static %}
+<div class="special-features margin-bottom">
+    <div class="container">
+        <div class="special-features-inner">
+            {% for sf in special_features %}
+                <div class="special-feature text_blue">
+                    
+                    <div class="special-feature__icon">
+                        <img src="{% static 'img/icons/sf-icon.svg' %}" alt="">
+                    </div>
+                    <div class="special-feature__content">
+                        <div class="special-feature__title h3">
+                            {{ sf.title}}
+                        </div>
+                        <div class="special-feature__items">
+                            {% for det in sf.details.all  %}
+                                <div class="special-feature__item">ー {{ det }}</div>
+                            {% endfor %}
+                            
+                        </div>
+                        <div class="special-feature__text">
+                            {{ sf.description }}
+                        </div>
+                    </div>
+                </div>
+            {% endfor %}
+            
+        </div>
+    </div>
+</div>

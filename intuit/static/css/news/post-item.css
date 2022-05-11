@@ -1,0 +1,33 @@
+.post-item{
+    width: 366px;
+    margin-right: 20px;
+}
+@media screen and (max-width: 992px) {
+    .post-item{
+        width: 344px;
+        margin-right: 20px;
+    }   
+}
+@media screen and (max-width: 768px) {
+    .post-item{
+        width: 288px;
+        margin-right: 20px;
+    }   
+}
+.post-item-img{
+    height: 224px;
+    width: inherit;
+
+    margin-bottom: 14px;
+}
+.post-item-img-inner{
+    object-fit: cover;
+}
+.post-item-datetime{
+    margin-bottom: 14px;
+}
+
+
+.post-item-title{
+    font-weight: 600;
+}

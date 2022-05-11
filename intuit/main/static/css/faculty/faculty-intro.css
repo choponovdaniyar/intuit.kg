@@ -1,0 +1,88 @@
+.faculty-intro{
+    background-color: #21212177;
+    color: white;
+
+    padding-top: 70px;
+
+    box-sizing: border-box;
+
+    background-image: url("https://synergy.ru/assets/upload/v4/faculties/bg-new/it-.png");
+}
+
+.faculty-intro__inner.container{
+    padding-bottom: 0px;
+}
+
+.faculty-intro__content{
+    margin-bottom: 70px;
+}
+
+.faculty-intro__triggers{
+    
+
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    justify-self: center;
+
+    background-color: rgba(255, 255, 255, 0.695);
+}
+@media screen and (max-width: 992px) {
+    .faculty-intro__triggers{
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+    }   
+}
+@media screen and (max-width: 575px){
+    .faculty-intro__triggers{
+        display: grid;
+        grid-template-columns: 1fr;
+    }
+}
+
+.faculty-intro__trigger{
+    margin: 18px 0;
+    padding: 0 24px 5px;
+
+    display: inline-block;
+    
+    text-align: center;
+
+    border-right: 1px solid #2A2173;
+}
+.faculty-intro__trigger:last-child{
+    border-right:none;
+}
+@media screen and (max-width: 992px){
+    .faculty-intro__trigger:nth-child(2n-1){
+        border-right: 1px solid #2A2173;
+    }
+    .faculty-intro__trigger:nth-child(2n){
+        border-right:none;
+    } 
+}
+@media screen and (max-width: 575px){
+    .faculty-intro__trigger:nth-child(2n-1){
+        border-right: none;
+    }
+
+    .faculty-intro__trigger{
+        margin: 0px;
+    
+        padding: 20px 0;
+        padding-left: 10px;
+
+        border-bottom: 1px solid #2A2173;
+
+        text-align: start;
+    }
+    
+    .faculty-intro__trigger:last-child{
+        border-bottom: none;
+    }
+}
+
+
+.faculty-intro__trigger-title{
+    text-transform: uppercase;
+    font-weight: 700;
+}

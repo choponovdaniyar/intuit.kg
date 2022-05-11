@@ -1,0 +1,63 @@
+.profile-profession{
+    padding-top: 50px;
+    padding-bottom: 40px;
+
+    background-color: #E5F4F0;
+}
+.profile-profession__title{
+    margin-bottom: 30px;
+}
+
+.profile-profession__items{
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-gap: 20px;
+}
+
+.profile-profession__item{
+    display: grid;
+    grid-template-columns: auto 1fr;
+    grid-gap: 10px;
+
+    background-color: #fff;
+
+    box-sizing: border-box;
+
+    padding: 15px;
+}
+@media screen and (max-width: 768px) {
+    .profile-profession__item{
+        display: grid;
+        grid-template-columns: 1fr;
+        
+        text-align: center;
+    }
+}
+.profile-profession__item-img{
+    grid-row: 1/3;
+    justify-self: center; 
+
+    margin-right: 10px;
+    
+    border-radius: 50%;
+
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+}
+
+@media screen and(max-width: 992px) {
+    .profile-profession__item-img{
+        margin-right: 0px;
+        margin-bottom: 10px;
+    }
+}
+
+.profile-profession__item-title{
+    align-self: center;
+}
+.profile-profession__item-text{
+    align-self: start;
+
+    line-height: 1.5;
+}

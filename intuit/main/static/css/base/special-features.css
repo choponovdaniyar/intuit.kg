@@ -1,0 +1,36 @@
+.special-features{
+    background-color: #F3F6FD;
+    padding: 70px 0;
+}
+
+.special-features-inner{
+    display: grid;
+    grid-gap: 25px;
+}
+
+.special-feature{
+    display: grid;
+    grid-template-columns: auto 1fr;
+    grid-gap: 20px;
+
+    padding: 25px;
+    box-sizing: border-box;
+
+    border-radius: 14px;
+    
+    background-color: #fff;
+
+}
+
+.special-feature__title{
+    margin-bottom: 10px;
+}
+.special-feature__items{
+    padding-left: 20px;
+}
+.special-feature__item{
+    line-height: 1.55;
+}
+.special-feature__text{
+    line-height: 1.55;
+}

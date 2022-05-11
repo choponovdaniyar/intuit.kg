@@ -1,0 +1,36 @@
+.pagination{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.pagination__paginator{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    
+}
+.pagination__page:nth-child(1){
+    border-left: 2px solid #dfe2e9;
+}
+.pagination__page{
+    display: block;
+
+    font-size: 22px;
+
+    border-right: 2px solid #dfe2e9;
+    border-top: 2px solid #dfe2e9;
+    border-bottom: 2px solid #dfe2e9;
+    
+    padding: 5px;
+}
+@media screen and(max-width:768px){
+    .pagination__page{
+        font-size: 18px;
+    }
+}
+
+.pagination__page:hover{
+    background-color: #2A2173;
+    color: #dfe2e9;
+}

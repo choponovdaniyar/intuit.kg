@@ -1,0 +1,20 @@
+<div class="go-to-university margin-bottom">
+    <div class="container">
+        <div class="go-to-university__inner">
+            <div class="h2 text_blue go-to-university__title">
+                Подать заявку на поступление
+            </div>   
+            <form action="" method="post">
+                {% csrf_token %}
+                {% for field in form%}
+                    {{ field }}
+                {% endfor %}
+                <div class="button flex-button theme-green">    
+                    <button class="button theme-green" type="submit">Отправить</button>
+                </div>
+            </form>
+        </div>
+        
+        
+    </div>
+</div>

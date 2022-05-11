@@ -95,3 +95,30 @@ def main(request):
     return render(request, template_name="main/index.html", context=context)
 
     
+
+
+def selection_committee(request):
+    context = {
+        "go_to": forms.InteresUser(),
+        "title": "Абитуриентам",
+        "programs": ProfileModel.objects.all()
+    }
+    if request.method == 'POST':
+        form = forms.InteresUser(request.POST)
+        if form.is_valid():
+            send_mail(
+                '| intuit.kg | Приемная коммисия', 
+                get_message(request),
+                EMAIL_HOST_USER, 
+                [ EMAIL_HOST_USER ], 
+                fail_silently=False
+            )
+            save_interesed_user(
+                request, 
+                context["title"]
+            )
+    return render(
+        request, 
+        template_name="main/selection-committee.html", 
+        context=context
+    )

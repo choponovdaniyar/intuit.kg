@@ -1,0 +1,14 @@
+{% load static %}
+<div class="profile-intro">
+    <div class="container">
+        <div class="profile-intro__inner">
+            <div class="profile-intro__title h2 text_blue">{{ title }}</div>
+            <div class="profile-intro__text text_blue ">
+                {{ description }}
+            </div>  
+            <div class="profile-intro__img">
+                <img src="{% static 'img/faculties/profile.jpg'%}" alt="" class="profile-intro__img-inner">
+            </div>  
+        </div>
+    </div>
+</div>

@@ -1,0 +1,16 @@
+<div class="profile-triggers">
+    <div class="container">
+        <div class="profile-triggers__inner hidden-scroller">
+            {% for trigger in triggers %}
+            <div class="profile-trigger text_blue">
+                <div class="profile-trigger__text">
+                    {{ trigger.title }}
+                </div>
+                <div class="profile-trigger__title h4">
+                    {{ trigger.numeric|lower }}
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</div>

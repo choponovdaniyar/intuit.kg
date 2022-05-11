@@ -1,48 +1,50 @@
 {% load static%}
-<section>
-    <section class="post">
-        <div class="container">
-            <div class="post__content">
-                <h1 class="post__title">
-                    {{ post.title }}
-                </h1>
-                <div class="post__details">
-                    {% for category in post.categories.all %}   
-
-                        <a href="/news/{{category.slug}}/">
-                            <h2 class="post__author">{{ category.title }}</h2>
-                        </a>
-                    {% endfor %}
-                    
-                
-
-                    <span class="post__date">
-                        {{ post.date }}
-                    </span>
-                </div>
-                <div class="post__banner">
-                    {% if post.banner %}
-                      <img src="{{ post.banner.url }}" alt="" class="post__img">
-                    {% endif %}
-                </div>
-                <hr class="post__line">
-                {{ post.description|linebreaks }}
-                
-                
-                {% for img in post.images.all %}  
-                    <img src='{{img.image.url}}' alt="{{ img.title}}"> 
+<section class="post margin-bottom">
+    <div class="container">
+        <div class="post__content">
+            <h1 class="post__title h3 text_blue">
+                {{ post.title }}
+            </h1>
+            <div class="post__details">
+                <b class="text_blue">
+                {% if post.categories.all.count > 1%}
+                    Категории:
+                {% else %}
+                    Категория:
+                {% endif %}
+                </b>
+                {% for category in post.categories.all %}   
+                    <a href="/news/{{category.slug}}/" class="a a_blue a_blue">
+                        <span class="post__category">{{ category.title }}</span>
+                    </a>
                 {% endfor %}
+            </div>
+            <div class="post__date">
+                <b class="text_blue">Дата публикации:</b>
+                
+                {{ post.date }}
+            </div>
 
-                <br>
-                <p>
-                    {% if post.files.all %}
-                        <b>Файлы:</b> 
-                        {% for file in post.files.all %}
-                            <a href="{{ file.file.url}}" alt="{{ file.title }}">{{ file.title }}</a>
-                        {% endfor %}
-                    {% endif %}
-                </p>
+
+            <!-- <div class="post__banner">
+                {% if post.banner %}
+                    <img src="{{ post.banner.url }}" alt="" class="post__img">
+                {% endif %}
+            </div> -->
+            <div class="post__description">
+                {{ post.description|linebreaks }}
+            </div>
+            <div class="post__images">
+                {% include 'news/blocks/slider.html' with images=post.images.all %}    
+            </div>
+            <div class="post__files">
+                {% if post.files.all %}
+                    <b>Файлы:</b> 
+                    {% for file in post.files.all %}
+                        <a href="{{ file.file.url}}" alt="{{ file.title }}">{{ file.title }}</a>
+                    {% endfor %}
+                {% endif %}
             </div>
         </div>
-    </section>
+    </div>
 </section>

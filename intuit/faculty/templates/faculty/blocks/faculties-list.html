@@ -1,0 +1,26 @@
+<div class="faculty__list margin-top margin-bottom">
+    <div class="container">
+        <div class="faculities__list-inner">
+            {% for faculty in faculties %}
+
+                <a class="faculities__item a" href="{{ faculty.get_absolute_url }}">
+                    <div class="faculities__item-icon">
+                        <img 
+                            src="{{ faculty.logo.url }}" 
+                            alt=""
+                            class="faculities__item-img"
+                        >
+                    </div>
+                    
+                    <div class="faculities__item-info">
+                        {{ faculty.title}}
+                    </div>
+
+                    <div class="classic-button faculities__item-button">
+                            {{faculty.faculty.all.count }} программ
+                    </div>   
+                </a>
+            {% endfor %}
+        </div>
+    </div>
+</div>

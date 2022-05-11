@@ -1,0 +1,45 @@
+<div class="faculties-intro margin-bottom">
+    <div class="container">
+        <div class="faculties-intro__info">
+            <div class="faculties-intro__info-inner">
+                <div class="faculties-intro__title text_blue h2">{{ title }} Университета</div>
+                <div class="faculties-intro__text text_blue">
+                    {% if desc %}
+                        {{ desc|linebreaks}}
+                    {% else %}
+                        <b>
+                            {% if title == 'Колледжи' %}
+                                В колледжах КОМТЕХНО и КИТЭ
+                            {% elif title == 'Институты' %}
+                                С университетом МУИТ
+                            {% endif %}
+                            вы получаете качественное 
+                            образование и востребованные в современном мире профессии.
+                        </b>
+                        Наши студенты обучаются с помощью современных технологий, постигают азы новых профессий 
+                        в достойных компаниях, проходят практику у ведущих специалистов различных сфер. 
+                    {% endif %}             
+                </div>    
+            </div>
+            
+        </div>
+
+        <div class="faculties-intro__info">
+            <div class="faculties-intro__items hidden-scroller">
+                {% for detail in details %}
+                    <div class="faculties-intro__item">
+                        <div class="clasi-intro__item-title h3 text_blue">
+                            {{detail.numeric|lower|lower}}
+                        </div>
+                        <div class="faculties-intro__item-text">
+                            {{detail.title|lower|capfirst}}
+                        </div>
+                    </div>
+                {% endfor %}
+                
+            </div>
+         
+        </div>
+        
+    </div>
+</div>

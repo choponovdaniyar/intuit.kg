@@ -1,0 +1,85 @@
+.faculties-intro{
+    background-color: #F3F6FD;
+    
+    padding: 5rem 0;
+}
+@media screen and (max-width: 992px) {
+    .faculties-intro{
+        padding: 2.5rem 0;
+    }
+}
+@media screen and (max-width: 768px) {
+    .faculties-intro{
+        padding: 2.5rem 0;
+    }
+}
+
+
+.faculties-intro__info{
+    border-radius: 15px;
+
+    background-color: #fff;
+    
+    padding: 20px;
+    
+    margin-bottom: 15px;
+}
+@media screen and (max-width: 575px ) {
+    .faculties-intro__info{
+        padding: 12.5px;
+    }
+}
+
+
+.faculties-intro__info-inner{
+    max-width: 53.25rem;
+}
+
+
+.faculties-intro__title{
+    margin-bottom: 25px;
+}
+@media screen and (max-width: 992px) {
+    .faculties-intro__title{
+        margin-bottom: 15px;
+    }
+}
+@media screen and (max-width: 575px) {
+    .faculties-intro__title{
+        margin-bottom: 10px;
+    }
+}
+.faculties-intro__text{
+    line-height: 1.60;
+}
+
+
+.faculties-intro__items{
+    display: flex;
+}
+
+.faculties-intro__item{
+    padding: 25px;
+    
+    margin-right: 12px;
+
+    border-radius: 10px;
+
+    box-sizing: border-box;
+    
+
+    border: 1px solid #DDE0EA;
+
+    max-width: 320px;
+}
+
+@media screen and (max-width: 575px) {
+    .faculties-intro__item{
+        padding: 10px;
+    }
+}
+
+.faculties-intro__item-title{
+    font-weight: 700;
+    line-height: 1.3;
+}

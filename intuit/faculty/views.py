@@ -4,9 +4,10 @@ from django.views.generic.base import TemplateView
 from django.views.generic.edit import FormView
 from django.core.mail import send_mail
 
-from .models import DetailModel, EducationModel, FacultyModel, ProfileModel
+from .models import DetailModel, EducationModel, FacultyModel, ProfileModel, SpecialAbilitiesModel
 from main import forms as main_forms
 from main import views as main_views
+from main import models as main_models
 
 
 
@@ -17,9 +18,9 @@ class FacultiesListView(ListView):
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)       
         context["title"] = "Институты"
-        # context["admission"] = self.get_form()  
         context["details"] = DetailModel.objects.filter(page__title="Факультеты")
-        
+        context["go_to"] = main_forms.InteresUser()
+
         return context  
 
     def get_queryset(self):
@@ -34,6 +35,7 @@ class CollagiesListView(ListView):
         context = super().get_context_data(**kwargs) 
         context["title"] = "Колледжи"
         context["details"] = DetailModel.objects.filter(page__title="Колледжи") 
+        context["go_to"] = main_forms.InteresUser()
         
         return context
     
@@ -58,12 +60,20 @@ class FacultyListView(ListView):
             **kwargs)
         context["title"] = self.get_faculty()
         context["details"] = DetailModel.objects.filter(page__title="Колледжи") 
+        faculty = self.get_faculty()
+        if faculty.status == "middle":
+            context["sf"] = SpecialAbilitiesModel.objects.exclude(
+                title="Скидки на обучение в нашем ВУЗе"
+            ).exclude(
+                title="Перевод из другого вуза"
+            )  
+        else:
+            context["sf"] = SpecialAbilitiesModel.objects.exclude(
+                title="Скидки на обучение в нашем колледже"
+            ).exclude(
+                title="Перевод из другого колледжа"
+            )       
         
-        context["programs_count"] = ProfileModel.objects.filter(faculty__slug=self.kwargs["faculty"]).count
-        context["collage"] = self.get_faculty().faculty.filter(education__title="Колледж")
-        context["under"] = self.get_faculty().faculty.filter(education__title="Бакалавриат")
-        context["middle"] = self.get_faculty().faculty.filter(education__title="Магистратура")
-        context["post"] = self.get_faculty().faculty.filter(education__title="Aспирантура")
 
         
         return context
@@ -79,7 +89,7 @@ class FacultyListView(ListView):
             main_views.get_message(self.request),
             main_views.EMAIL_HOST_USER, 
             [ main_views.EMAIL_HOST_USER ], 
-            fail_silently=False
+            fail_silently=False 
         )
         main_views.save_interesed_user(self.request, page_name)
         return super().form_valid(form)

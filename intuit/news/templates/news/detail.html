@@ -1,5 +1,45 @@
-{% extends 'base.html' %}
 
-{% block main %}
-    {% include 'news/blocks/post.html' %}
-{% endblock %}
+
+
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Главная</title>
+
+    <link rel="stylesheet" href="{% static 'css/news/post.css' %}">
+    <link rel="stylesheet" href="{% static 'css/news/slider.css' %}">
+
+    <link rel="stylesheet" href="{% static 'css/base/base.css' %}">
+    <link rel="stylesheet" href="{% static 'css/base/elems.css' %}">
+    <link rel="stylesheet" href="{% static 'css/base/header.css' %}">
+    <link rel="stylesheet" href="{% static 'css/base/footer.css' %}">
+    <link rel="stylesheet" href="{% static 'css/base/burger.css' %}">
+
+
+    
+
+
+    <link rel="stylesheet" href="https://unpkg.com/swiper@8/swiper-bundle.min.css"/>
+
+
+</head>
+<body>
+    {% include 'bases/header.html'%}
+    <main class="margin-top">       
+        {% include 'news/blocks/post.html' %}
+    </main>
+
+    {% include 'bases/footer.html' %}
+               
+    
+    <script src="https://unpkg.com/swiper@8/swiper-bundle.min.js"></script>
+    <script src="{% static 'js/slider.js' %}"></script>
+    
+</body>
+</html>
+
+

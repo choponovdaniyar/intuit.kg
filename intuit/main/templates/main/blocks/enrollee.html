@@ -1,27 +1,33 @@
 <section class="enrollee">
     <div class="container">
         <div class="enrollee__content">
-            <h1 class="enrollee__title">
+            <p class="enrollee__title h1 text_blue">
                 Абитуриентам
-            </h1>
+            </p>
 
-            <h2 class="enrollee__subtitle">
+            <p class="enrollee__subtitle h2 text_blue">
                 Прием документов в онлайн и офлайн режимах
-            </h2>
-            
+            </p>
             <p class="enrollee__descr">
-                    Прием абитуриентов осуществляется с и без результатов ОРТ. МУИТ проводит вступительные 
+                Прием абитуриентов осуществляется с и без результатов ОРТ. 
+            </p>
+            <p class="enrollee__descr">
+                МУИТ проводит вступительные 
                 испытания только на творческие направления по предмету «Рисунок»
             </p>
             
             <div class="enrollee__form">
-                Получить консультацию приемной комиссии
+                <p class="enrollee__form-title h3 text_blue">Получить консультацию в приемной комиссии</p>
+                
                 <form class="hero__form" method="post">
                     {% csrf_token %}
         
                     {{ form.user }}
                     {{ form.phone }}
-                    <button class="btn__green" type="submit">Подать заявку</button>
+                    <div class="button flex-button theme-green catalog__button catalog__sumbit">
+                        <button class="button theme-green" type="submit">Подать заявку</button>
+                    </div>
+                    
                 </form>
             </div>
         </div>

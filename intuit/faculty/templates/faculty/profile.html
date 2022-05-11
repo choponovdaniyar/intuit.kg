@@ -1,21 +1,55 @@
-{% extends 'base.html' %}
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ title }}</title>
 
-{% block main %}
-{% include 'faculty/blocks/banner.html' with details=profile.details.all %}
+    <link rel="stylesheet" href="{% static 'css/faculty/faculties-intro.css' %}">
+    <link rel="stylesheet" href="{% static 'css/faculty/teachers.css' %}">
 
-{% include 'faculty/blocks/detail.html' with description=profile.description %}
+    <link rel="stylesheet" href="{% static 'css/faculty/profile-intro.css' %}">
+    <link rel="stylesheet" href="{% static 'css/faculty/profile-triggers.css' %}">
+    <link rel="stylesheet" href="{% static 'css/faculty/profile-program.css' %}">
+    <link rel="stylesheet" href="{% static 'css/faculty/profile-profession.css' %}">
+    <link rel="stylesheet" href="{% static 'css/faculty/program-study.css' %}">
 
-{% if profile.work_places %}
-    {% include 'faculty/blocks/workplace.html' with description=profile.work_places %}
-{% endif%}
+    <link rel="stylesheet" href="{% static 'css/index/about.css' %}">
 
-{% include 'faculty/blocks/courses.html' with courses=profile.courses.all %}
-{% include 'faculty/blocks/skills.html' with skills=profile.skills.all %}
+    <link rel="stylesheet" href="{% static 'css/base/diploms.css' %}">
+    <link rel="stylesheet" href="{% static 'css/base/docs.css' %}">
+    <link rel="stylesheet" href="{% static 'css/base/catalog.css' %}">
+    <link rel="stylesheet" href="{% static 'css/base/special-features.css' %}">
+    <link rel="stylesheet" href="{% static 'css/base/edu-forms.css' %}">
+    <link rel="stylesheet" href="{% static 'css/base/page-desc.css' %}">
+    <link rel="stylesheet" href="{% static 'css/base/programs.css' %}">
+    <link rel="stylesheet" href="{% static 'css/base/go-to-university.css' %}">
+    <link rel="stylesheet" href="{% static 'css/base/base.css' %}">
+    <link rel="stylesheet" href="{% static 'css/base/elems.css' %}">
+    <link rel="stylesheet" href="{% static 'css/base/header.css' %}">
+    <link rel="stylesheet" href="{% static 'css/base/footer.css' %}">
+    <link rel="stylesheet" href="{% static 'css/base/burger.css' %}">
 
-{% include 'faculty/blocks/will.html' with professions=profile.professions.all %}
 
-{% include 'main/blocks/admission.html' with form=form %}
+    
 
-{% include 'faculty/blocks/info.html' with info=title.info.all documents=profile.documents.all %}
+</head>
+<body>
+    {% include 'bases/header.html'%}
+    <main>   
+        {% include 'faculty/blocks/profile-intro.html' with title=profile.title description=profile.description %} 
+        {% include 'faculty/blocks/profile-triggers.html' with triggers=profile.details.all %} 
+        {% include 'faculty/blocks/profile-program.html' with programs=profile.courses.all %}
+        {% include 'faculty/blocks/program-study.html' with skills=profile.skills.all %}
+        {% include 'faculty/blocks/profile-profession.html' with professions=profile.professions.all  %}
+        {% include 'bases/docs.html' with docs=profile.documents.all %}
+    </main>
 
-{% endblock %}
+    {% include 'bases/footer.html' %}
+
+    <script src="{% static 'js/faculty/faculty-list.js'%}"></script>
+
+</body>
+</html>

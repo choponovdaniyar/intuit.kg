@@ -1,0 +1,20 @@
+.swiper,
+.swiper-img{
+    max-height: 400px;
+    
+    max-width: 100%;
+    height: auto;
+
+    background-color: #212121;
+}
+
+.swiper-slide{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+
+.swiper-img{
+    object-fit: contain;
+}

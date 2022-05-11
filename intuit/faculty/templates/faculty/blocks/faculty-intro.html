@@ -1,0 +1,25 @@
+<div class="faculty-intro ">
+    <div class="container faculty-intro__inner">
+        <div class="faculty-intro__content">
+            <div class="h2 faculty-intro__title text_white">
+                {{ title }}
+            </div>    
+            <div class="faculty-intro__text">
+            </div>    
+        </div>
+
+        <div class="faculty-intro__triggers ">
+            {% for detail in details %}
+                        <div class="faculty-intro__trigger">
+                <div class="faculty-intro__trigger-title text_blue">
+                    {{ detail.numeric}}
+                </div>
+                <div class="faculty-intro__trigger-text text_blue">
+                    {{ detail.title|lower }}
+                </div>
+            </div>    
+            {% endfor %}
+        </div>
+    </div>
+    
+</div>

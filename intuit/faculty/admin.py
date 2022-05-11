@@ -69,6 +69,7 @@ class ProfileAdmin(admin.ModelAdmin):
 class EduFormAdmin(admin.ModelAdmin):
     list_display = ["title_", "title", "get_page", 'get_icon']
     search_fields = [ "title"]
+    list_filter = ["title"]
     prepopulated_fields = {"slug": ["title"]}
 
     def get_icon(self,object):

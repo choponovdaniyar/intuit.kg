@@ -24,8 +24,8 @@
     .str1 {stroke:#D9DADA;stroke-width:7.62}
     .fil1 {fill:none}
     .fil3 {fill:none;fill-rule:nonzero}
-    .fil0 {fill:#EBECEC}
-    .fil2 {fill:#EBECEC;fill-rule:nonzero}
+    .fil0 {fill:#000}
+    .fil2 {fill:#000;fill-rule:nonzero}
     .fnt0 {font-weight:bold;font-size:1439.22px;font-family:'Arial'}
    ]]>
   </style>

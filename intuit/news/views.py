@@ -8,7 +8,7 @@ from .models import PostModel, CategoryModel
 class PostListView(ListView):
     queryset = PostModel.active_posts.all()
     context_object_name = "posts"
-    paginate_by = 1
+    paginate_by = 10
     template_name = "news/index.html"
 
     def get_context_data(self, **kwargs):
@@ -20,7 +20,7 @@ class PostListView(ListView):
 
 class PostCategoryListView(ListView):
     context_object_name = "posts"
-    paginate_by = 8
+    paginate_by = 10
     template_name = "news/index.html"
 
     def get_context_data(self, **kwargs):

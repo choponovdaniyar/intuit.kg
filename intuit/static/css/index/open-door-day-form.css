@@ -1,0 +1,16 @@
+.open-door-day-form__inner{
+    background-color: rgb(243,246,253);
+
+    padding: 36px 22px 50px;
+
+    border-radius: 4px;
+}
+
+@media screen and (max-width: 768px) {
+    .open-door-day-form__inner{
+        padding: 36px 16px 36px 28px;
+    }   
+}
+.open-door-day-form__title{
+    margin-bottom: 30px;
+}

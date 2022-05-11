@@ -1,0 +1,66 @@
+{% load static %}
+<a id="profiles"></a>
+<div class="programs margin-bottom margin-top">
+    <div class="container">
+        <div class="programs__title h2 text_blue">
+            {% if title%}
+                {{ title }}
+            {% else %}
+                Программы обучения
+            {% endif %}
+        </div>
+        {% if not education %}
+            <div class="programs__educations">
+                {% if title.status %}
+                    {% if title.status == 'post' %}                
+                        <nav class="programs__education education h4"><a class="a a_green">Бакалавриат</a></nav>
+                        <nav class="programs__education education h4"><a class="a a_green">Магистратура</a></nav>
+                        <nav class="programs__education education h4"><a class="a a_green">Aспирантура</a></nav>
+                        <nav class="programs__education education h4"><a class="a a_green">Курсы</a></nav>
+                    {% else %}
+                        <nav class="programs__education education h4"><a class="a a_green">Колледж</a></nav>
+                    {% endif %}
+                {% else %}
+                    <nav class="programs__education education h4"><a class="a a_green">Колледж</a></nav>
+                    <nav class="programs__education education h4"><a class="a a_green">Бакалавриат</a></nav>
+                    <nav class="programs__education education h4"><a class="a a_green">Магистратура</a></nav>
+                    <nav class="programs__education education h4"><a class="a a_green">Aспирантура</a></nav>
+                    <nav class="programs__education education h4"><a class="a a_green">Курсы</a></nav>
+                {% endif %}
+                
+            </div>  
+        {% endif %}
+        
+        <div class="programs__content">
+            {% for profile in profiles %}
+                <a href="{{ profile.get_absolute_url }}" class="a program-wrapper">
+                    <div class="program">
+                        <div class="program__education" style="display: none;">
+                            {{ profile.education }}
+                        </div>
+                        <div class="program__faculty text_blue">
+                            <div class="program__faculty-title">{{ profile.faculty|lower|capfirst }}</div>
+                            <div class="program__faculty-icon">
+                                <img src="{% static 'img/icons/program.svg' %}" alt="" class="program__faculty-icon">
+                            </div>
+                            
+                        </div>
+                        <div class="program__title a_green h4">
+                            {{ profile.title|lower|capfirst }}
+                        </div>
+                    </div>            
+                </a>
+            {% endfor %}
+        </div>
+        <div class="program__button">
+            <div class="classic-button program__button-inner">
+                <img src="https://img.icons8.com/ios-glyphs/90/000000/macos-maximize.png" class="program__button-icon" />
+                <div class="program__button-text">
+                    показать еще    
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="{% static 'js/header/programs.js' %}"></script>

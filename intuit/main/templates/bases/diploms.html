@@ -1,0 +1,92 @@
+{% load static %}
+<div class="diploms margin-bottom">
+    <div class="container">
+        <div class="diploms__content">
+            <div class="h2 diploms__title text_blue">
+                Твой будущий диплом
+            </div>
+        </div>    
+        {% with '/static/img/icons/gerb.png' as gerb %}
+        <div class="diploms__items hidden-scroller_x">
+            <div class="diploms__item">
+                <div class="diploms__icon ">
+                    <img 
+                        class="diploms__icon-img"
+                        src="{{ gerb }}" alt="">
+                </div>
+                <div class="h2 diploms__item-title">
+                    Диплом 
+                    <br>
+                    бакалавра
+                </div>
+                <div class="diploms__search">
+                    <a class="diploms__search-inner a a_green" href="/media/faculty/documents/европейское_приложение_диплома.pdf">
+                        <div class="diploms__search-text">
+                            Посмотреть
+                        </div>
+                        <img src="{% static 'img/icons/search.svg' %}" alt="">
+                    </a>
+                </div>
+            </div>
+            
+            <div class="diploms__item">
+                <div class="diploms__icon ">
+                    <img 
+                        class="diploms__icon-img"
+                        src="{{ gerb }}" alt="">
+                </div>
+                <div class="h2 diploms__item-title">
+                    Диплом 
+                    <br>
+                    магистра
+                </div>
+                <div class="diploms__search">
+                    <a class="diploms__search-inner a a_green" href="/media/faculty/documents/европейское_приложение_диплома.pdf">
+                        <div class="diploms__search-text">
+                            Посмотреть
+                        </div>
+                        <img src="{% static 'img/icons/search.svg' %}" alt="">
+                    </a>
+                </div>
+            </div>
+
+            <div class="diploms__item">
+                <div class="diploms__icon ">
+                    <img 
+                        class="diploms__icon-img"
+                        src="{{ gerb }}" alt="">
+                </div>
+                <div class="h2 diploms__item-title">
+                    Диплом
+                </div>
+                <div class="diploms__search">
+                    <a class="diploms__search-inner a a_green" href="/media/faculty/documents/европейское_приложение_диплома.pdf">
+                        <div class="diploms__search-text">
+                            Посмотреть
+                        </div>
+                        <img src="{% static 'img/icons/search.svg' %}" alt="">
+                    </a>
+                </div>
+            </div>
+            <div class="diploms__item">
+                <div class="diploms__icon ">
+                    <img 
+                        class="diploms__icon-img"
+                        src="{{ gerb }}" alt="">
+                </div>
+                <div class="h2 diploms__item-title">
+                    Диплом 
+                </div>
+                <div class="diploms__search">
+                    <a class="diploms__search-inner a a_green" href="/media/faculty/documents/европейское_приложение_диплома.pdf">
+                        <div class="diploms__search-text">
+                            Посмотреть
+                        </div>
+                        <img src="{% static 'img/icons/search.svg' %}" alt="">
+                    </a>
+                </div>
+            </div>
+        </div>
+        {% endwith %}
+    </div>     
+</div>

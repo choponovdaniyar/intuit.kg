@@ -1,0 +1,26 @@
+<div class="profile-profession margin-bottom">
+    <div class="container">
+        <div class="profile-profession__inner text_blue">
+            <div class="profile-profession__title h2 ">
+                Кем вы станете
+            </div>
+            <div class="profile-profession__items">
+                {% for profession in professions %}
+                <div class="profile-profession__item">
+                    <img 
+                        class="profile-profession__item-img"
+                        src="https://synergy.ru/assets/components/phpthumbof/cache/1.b76c8b52c8798023d22435515efb8da4.jpg" 
+                        alt=""
+                    >
+                    <div class="profile-profession__item-title h4">
+                        {{ profession.title }}
+                    </div>
+                    <div class="profile-profession__item-text">
+                        {{ profession.description }}
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+</div>

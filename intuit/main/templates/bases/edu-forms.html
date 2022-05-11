@@ -1,0 +1,27 @@
+{% load static %}
+<div class="edu-forms margin-bottom">
+    <div class="container">
+        <div class="edu-forms__title h2 text_blue">
+            Формы обучения
+        </div>
+        <div class="edu-forms__content text_blue">
+       
+            {% for edu_form in edu_forms %}
+                <div class="edu-form">
+                    <div class="edu-form__header">
+                        <div class="edu-form__title h3">
+                            {{ edu_form.title }}
+                        </div>
+                        <div class="edu-form__icon">
+                            <img src="{{ edu_form.icon.image.url }}" alt="" class="edu-form__img">
+                        </div>
+                    </div>
+                    <div class="edu-form__text">
+                        {{ edu_form.description}}
+                    </div>    
+                </div>
+            {% endfor %}
+            
+        </div>
+    </div>
+</div>

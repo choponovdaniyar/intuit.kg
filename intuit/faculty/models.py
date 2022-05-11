@@ -4,27 +4,30 @@ from django.urls import reverse
 class ProfileModel(models.Model):
     EMPTY_FIELD = "Поле может быть пустым"
     
-    key = models.BigIntegerField(default=1)
+    key = models.BigIntegerField(default=1, blank=True)
     
     title = models.CharField(verbose_name="Название", max_length=250)
     logo = models.FileField(verbose_name="Логотип", upload_to="faculty/images/logo",
                             blank=True)
-    slug = models.SlugField(verbose_name="Ссылка")
+    slug = models.SlugField(verbose_name="Ссылка",  blank=True)
     
     education = models.ForeignKey(verbose_name="Образование", to="EducationModel",
                                     on_delete=models.CASCADE,
                                     related_name="education",
-                                    default = 1)
+                                    default = 1,
+                                    blank=True)
     faculty = models.ForeignKey('FacultyModel', verbose_name="Факультет",
                                     related_name="faculty", on_delete=models.CASCADE, 
-                                    default = 1)
+                                    default = 1,
+                                    blank=True)
 
     edu_form = models.ForeignKey('EduFormModel', verbose_name="Форма обучения",
                                     related_name="eduform", on_delete=models.CASCADE, 
-                                    default = 1) 
+                                    default = 1,
+                                    blank=True )
 
     details = models.ManyToManyField('DetailModel', verbose_name="Детали",
-                                    related_name="detail_profile",) 
+                                    related_name="detail_profile", blank=True) 
 
     work_places = models.TextField(verbose_name="Места работы", 
                                     help_text=EMPTY_FIELD, null=True, blank=True)
@@ -34,19 +37,19 @@ class ProfileModel(models.Model):
 
     description = models.TextField(verbose_name="Описание")
     teachers = models.ManyToManyField(to="TeacherModel", verbose_name="Преподаватели", 
-                                        related_name="teachers")
+                                        related_name="teachers",  blank=True)
 
     courses = models.ManyToManyField(to="CourseModel", verbose_name="Курсы",
-                                        related_name="courses")
+                                        related_name="courses", blank=True)
 
     skills = models.ManyToManyField(verbose_name="Навыки",to="SkillModel",
-                                    related_name="skills")
+                                    related_name="skills", blank=True)
 
     documents = models.ManyToManyField(to="DocumentModel", verbose_name="Документы",
-                                        related_name="documents")
+                                        related_name="documents", blank=True)
 
     professions = models.ManyToManyField(to="ProfessionModel",verbose_name="Професии",
-                                            related_name="professions")
+                                            related_name="professions", blank=True)
 
     
     class Meta:
@@ -66,6 +69,14 @@ class TeacherModel(models.Model):
     name = models.CharField(verbose_name="ФИО", max_length=250)
     description = models.TextField(verbose_name="Описание")
     image = models.FileField(verbose_name="Изображение", upload_to="faculty/images/teachers")
+
+    hm_networks = 'Введите ссылку на профиль (не обязательное полое)'
+    facebook = models.SlugField(verbose_name="facebook", help_text=hm_networks, blank=True)
+    telegram = models.SlugField(verbose_name="Телеграм", help_text=hm_networks, blank=True)
+    instagram = models.SlugField(verbose_name="Инстаграм", help_text=hm_networks, blank=True)
+    youtube = models.SlugField(verbose_name="YouTube", help_text=hm_networks, blank=True)
+    curriculum_vitae = models.SlugField(verbose_name="Curriculum Vitae", help_text=hm_networks,
+         blank=True)
 
     class Meta:
         ordering = ("name",)
@@ -170,7 +181,7 @@ class EduFormModel(models.Model):
                                 on_delete=models.CASCADE, default=1)
 
     class Meta:
-        ordering = ("title",)
+        ordering = ("pk",)
         verbose_name = "Форма обучения"
         verbose_name_plural = "Формы обучения"
 

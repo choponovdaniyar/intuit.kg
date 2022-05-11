@@ -1,19 +1,40 @@
-{% extends 'base.html' %}
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ title }}</title>
 
-{% block main %}
-{% include 'faculty/blocks/banner.html' %}
-{% if collage %}
-    {% include 'faculty/blocks/plofiles.html' with edu_title='Программы колледжа' profiles=collage %}
-{% endif %}
-{% if under %}
-    {% include 'faculty/blocks/plofiles.html' with edu_title='Профили бакалавриата' profiles=under %}
-{% endif %}
-{% if middle %}
-    {% include 'faculty/blocks/plofiles.html' with edu_title='Магистратура' profiles=middle %}
-{% endif %}
-{% if post %} 
-    {% include 'faculty/blocks/plofiles.html' with edu_title='Специальности аспирантуры' profiles=post %}
-{% endif %}
-{% include 'main/blocks/admission.html' with form=admission%}
-{% endblock %}
+    <link rel="stylesheet" href="{% static 'css/faculty/faculty-intro.css' %}">
 
+
+    <link rel="stylesheet" href="{% static 'css/base/special-features.css' %}">
+    <link rel="stylesheet" href="{% static 'css/base/programs.css' %}">
+    <link rel="stylesheet" href="{% static 'css/base/go-to-university.css' %}">
+    <link rel="stylesheet" href="{% static 'css/base/base.css' %}">
+    <link rel="stylesheet" href="{% static 'css/base/elems.css' %}">
+    <link rel="stylesheet" href="{% static 'css/base/header.css' %}">
+    <link rel="stylesheet" href="{% static 'css/base/footer.css' %}">
+    <link rel="stylesheet" href="{% static 'css/base/burger.css' %}">
+
+
+    
+
+</head>
+<body>
+    {% include 'bases/header.html'%}
+    <main>   
+        {% include 'faculty/blocks/faculty-intro.html' %}
+        {% include 'bases/programs.html' %}
+        {% include 'bases/special-features.html' with special_features=sf %}
+        {% include 'bases/go-to-uniersity.html' with form=form %} 
+    </main>
+
+    {% include 'bases/footer.html' %}
+
+    <script src="{% static 'js/faculty/faculty-list.js'%}"></script>
+
+</body>
+</html>

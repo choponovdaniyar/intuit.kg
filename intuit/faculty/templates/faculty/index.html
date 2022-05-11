@@ -1,6 +1,37 @@
-{% extends 'base.html' %}
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ title }}</title>
 
-{% block main %}
-    {% include 'faculty/blocks/faculties.html' %}
-    {% include 'main/blocks/admission.html' with form=admission%}
-{% endblock %}
+    <link rel="stylesheet" href="{% static 'css/faculty/faculties-intro.css' %}">
+    <link rel="stylesheet" href="{% static 'css/faculty/faculties-list.css' %}">
+
+    <link rel="stylesheet" href="{% static 'css/base/go-to-university.css' %}">
+    <link rel="stylesheet" href="{% static 'css/base/base.css' %}">
+    <link rel="stylesheet" href="{% static 'css/base/elems.css' %}">
+    <link rel="stylesheet" href="{% static 'css/base/header.css' %}">
+    <link rel="stylesheet" href="{% static 'css/base/footer.css' %}">
+    <link rel="stylesheet" href="{% static 'css/base/burger.css' %}">
+
+
+    
+
+</head>
+<body>
+    {% include 'bases/header.html'%}
+    <main>   
+        {% include 'faculty/blocks/faculties-intro.html' with title=title%}
+        {% include 'faculty/blocks/faculties-list.html'%}
+        {% include 'bases/go-to-uniersity.html' with form=go_to %} 
+    </main>
+
+    {% include 'bases/footer.html' %}
+
+    <script src="{% static 'js/faculty/faculty-list.js'%}"></script>
+
+</body>
+</html>

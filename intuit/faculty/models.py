@@ -14,17 +14,14 @@ class ProfileModel(models.Model):
     education = models.ForeignKey(verbose_name="Образование", to="EducationModel",
                                     on_delete=models.CASCADE,
                                     related_name="education",
-                                    default = 1,
-                                    blank=True)
+                                    default = 1)
     faculty = models.ForeignKey('FacultyModel', verbose_name="Факультет",
                                     related_name="faculty", on_delete=models.CASCADE, 
-                                    default = 1,
-                                    blank=True)
+                                    default = 1,)
 
     edu_form = models.ForeignKey('EduFormModel', verbose_name="Форма обучения",
                                     related_name="eduform", on_delete=models.CASCADE, 
-                                    default = 1,
-                                    blank=True )
+                                    default = 1)
 
     details = models.ManyToManyField('DetailModel', verbose_name="Детали",
                                     related_name="detail_profile", blank=True) 
@@ -36,9 +33,7 @@ class ProfileModel(models.Model):
                                     help_text=EMPTY_FIELD, null=True, blank=True)
 
     description = models.TextField(verbose_name="Описание")
-    teachers = models.ManyToManyField(to="TeacherModel", verbose_name="Преподаватели", 
-                                        related_name="teachers",  blank=True)
-
+    
     courses = models.ManyToManyField(to="CourseModel", verbose_name="Курсы",
                                         related_name="courses", blank=True)
 
@@ -67,21 +62,58 @@ class ProfileModel(models.Model):
 
 class TeacherModel(models.Model):
     name = models.CharField(verbose_name="ФИО", max_length=250)
-    description = models.TextField(verbose_name="Описание")
-    image = models.FileField(verbose_name="Изображение", upload_to="faculty/images/teachers")
+    slug = models.SlugField(verbose_name="Ссылка",  blank=True)
+    
+    STATUS_CHOISE = (
+        ("1", "Преподаватель"),
+        ("2", "Старший преподаватель"),
+        ("3", "Кандитат наук"),
+        ("4", "Профессор"),
+        ("5", "Доцент")
+    )
+    status = models.CharField(verbose_name="Звание", choices=STATUS_CHOISE, default="1", max_length=20)
 
-    hm_networks = 'Введите ссылку на профиль (не обязательное полое)'
-    facebook = models.SlugField(verbose_name="facebook", help_text=hm_networks, blank=True)
-    telegram = models.SlugField(verbose_name="Телеграм", help_text=hm_networks, blank=True)
-    instagram = models.SlugField(verbose_name="Инстаграм", help_text=hm_networks, blank=True)
-    youtube = models.SlugField(verbose_name="YouTube", help_text=hm_networks, blank=True)
-    curriculum_vitae = models.SlugField(verbose_name="Curriculum Vitae", help_text=hm_networks,
-         blank=True)
+    description = models.TextField(verbose_name="Описание", blank=True)
+    image = models.FileField(verbose_name="Изображение", upload_to="faculty/images/teachers", blank=True)
+
+
+    facebook = models.CharField(
+        verbose_name="facebook", 
+        help_text='Введите ссылку на профиль (не обязательное полое)', 
+        max_length=100,
+        blank=True)
+
+    telegram = models.CharField(
+        verbose_name="Телеграм", 
+        help_text="Введите ссылку на профиль (не обязательное полое)",
+        max_length=100,
+        blank=True)
+
+    instagram = models.CharField(
+        verbose_name="Инстаграм", 
+        help_text="Введите ссылку на профиль (не обязательное полое)", 
+        max_length=100,
+        blank=True)
+
+    youtube = models.CharField(
+        verbose_name="YouTube", 
+        help_text="Введите ссылку на профиль (не обязательное полое)",
+        max_length=100,
+        blank=True)
+
+    curriculum_vitae = models.FileField(
+        verbose_name="Логотип", 
+        upload_to="faculty/files/cv", 
+        blank=True)
 
     class Meta:
         ordering = ("name",)
         verbose_name = "Преподаватель"
         verbose_name_plural = "Преподаватели"
+
+    def get_absolute_url(self):
+            return reverse("faculty:teachers", args=[self.slug])
+
 
     def __str__(self):
         return self.name
@@ -99,7 +131,7 @@ class FacultyModel(models.Model):
                 
     logo = models.FileField(verbose_name="Логотип", upload_to="faculty/images/icons/faculty", 
                             blank=True)
-    
+
 
     class Meta:
         ordering = ("id",)
@@ -195,6 +227,9 @@ class EducationModel(models.Model):
                                 blank=True)
     slug = models.SlugField(verbose_name="ссылка")
     description = models.TextField(verbose_name="Описание", default="Описание")
+    teachers = models.ManyToManyField(to="TeacherModel", verbose_name="Преподаватели", 
+                                        related_query_name="education",  blank=True)
+
     detail = models.ManyToManyField(to="DetailModel", verbose_name="Детали",
                                     related_name="detail_education")
     special_abilities = models.ManyToManyField(to="SpecialAbilitiesModel",
@@ -276,3 +311,4 @@ class SpecialAbilitiesDetailModel(models.Model):
     
     def  __str__(self):
         return self.title
+

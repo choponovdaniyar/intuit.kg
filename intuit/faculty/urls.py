@@ -10,5 +10,6 @@ urlpatterns = [
     path('faculties/<slug:faculty>/', views.FacultyFormView.as_view(), name="faculty"),
     path('education/<slug:education>/', views.EducationListView.as_view(), name="education"),
     path('<slug:faculty>/<slug:education>/<slug:eduform>/<slug:title>', 
-            views.ProfileListView.as_view(), name="profile")
+            views.ProfileListView.as_view(), name="profile"),
+    path("teachers/<slug:teacher>", views.TeacherView.as_view(), name="teachers")
 ]

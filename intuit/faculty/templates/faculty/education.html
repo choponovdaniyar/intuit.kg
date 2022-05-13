@@ -1,52 +1,29 @@
-{% load static %}
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{{ title }}</title>
+{% extends 'root.html' %}
 
+
+{% block head %}
+    {% load static %}
     <link rel="stylesheet" href="{% static 'css/faculty/faculties-intro.css' %}">
     <link rel="stylesheet" href="{% static 'css/faculty/teachers.css' %}">
-
-    <link rel="stylesheet" href="{% static 'css/base/diploms.css' %}">
-    <link rel="stylesheet" href="{% static 'css/base/catalog.css' %}">
-    <link rel="stylesheet" href="{% static 'css/base/special-features.css' %}">
-    <link rel="stylesheet" href="{% static 'css/base/edu-forms.css' %}">
-    <link rel="stylesheet" href="{% static 'css/base/page-desc.css' %}">
-    <link rel="stylesheet" href="{% static 'css/base/programs.css' %}">
-    <link rel="stylesheet" href="{% static 'css/base/go-to-university.css' %}">
-    <link rel="stylesheet" href="{% static 'css/base/base.css' %}">
-    <link rel="stylesheet" href="{% static 'css/base/elems.css' %}">
-    <link rel="stylesheet" href="{% static 'css/base/header.css' %}">
-    <link rel="stylesheet" href="{% static 'css/base/footer.css' %}">
-    <link rel="stylesheet" href="{% static 'css/base/burger.css' %}">
+{% endblock %}
 
 
-    
-
-</head>
-<body>
-    {% include 'bases/header.html'%}
+{% block main %}
     <main>   
         {% include 'faculty/blocks/faculties-intro.html' with title=title details=title.detail.all desc=title.description%}
-     <!-- ||   {% include 'faculty/blocks/faculty-intro.html' with details=title.detail.all %} -->
-        <!-- {% if title.description %} -->
-            <!-- {% include 'bases/page-desc.html' with description=title.description %} -->
-        <!-- {% endif %} -->
+
         {% if title.pk == 4 %}
-            {% include 'bases/programs.html' with title='Научные специальности' education=True %}
+            {% include 'bases/programs.html' with page=title title='Научные специальности' education=True %}
         {% else %}
-            {% include 'bases/programs.html' with title='Программы обучения' education=True %}
+            {% include 'bases/programs.html' with page=title title='Программы обучения' education=True %}
         {% endif %}
 
 
         {% if title and title.detail.all.count > 0  %}
             {% if title.pk == 3%}
-                {% include 'faculty/blocks/teachers.html' with title='Преподаватели' details=title.detail.all%}
+                {% include 'faculty/blocks/teachers.html' with title='Преподаватели' teachers=title.teachers.all %}
             {% else %}
-                {% include 'faculty/blocks/teachers.html' with title='Профессора' details=title.detail.all%}
+                {% include 'faculty/blocks/teachers.html' with title='Профессора' teachers=title.teachers.all %}
             {% endif %}
         {% endif %}
         
@@ -61,14 +38,15 @@
         {% if title.special_abilities.all > 0 %}
             {% include 'bases/special-features.html' with special_features=title.special_abilities.all %}
         {% endif %}
-          
+        
         {% include 'bases/catalog.html' %} 
         {% include 'bases/diploms.html' %} 
     </main>
+{% endblock %}
 
-    {% include 'bases/footer.html' %}
 
+{% block scripts %}
+    {% load static %}
     <script src="{% static 'js/faculty/faculty-list.js'%}"></script>
-
-</body>
-</html>
+    <script src="{% static 'js/courses-modal.js'%}"></script>
+{% endblock %}

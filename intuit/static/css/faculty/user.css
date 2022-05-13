@@ -1,0 +1,160 @@
+.user{
+    background-size:cover;
+
+    text-align: center;
+
+    min-height: 100vh;
+    width: 100vw;
+}
+
+.user__inner{
+    position: relative;
+    bottom: 15vh;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    min-height: 100vh;
+}
+.user__logo{
+    margin-top: 150px;
+}
+.user__logo-box{
+    display: flex;
+    justify-content: center;
+}
+
+.user__img{
+
+    width: 150px;
+    height: 150px;
+
+    object-fit: cover;
+
+    border: 3px solid ;
+    border-radius: 100%;
+    box-shadow: 0 6px 26px ;
+}
+
+.user__img_green{
+    border: 3px solid green;
+    box-shadow: 0 6px 26px green;
+}
+.user__img_red{
+    border: 3px solid red;
+    box-shadow: 0 6px 26px red;
+}
+.user__img_blue{
+    border: 3px solid blue;
+    box-shadow: 0 6px 26px blue;
+}
+.user__title{
+    margin-top: 15px;
+}
+.user__text{
+    font-size: 16px;
+    line-height: 1.4;
+
+    margin-top: 10px;
+    
+    max-width: 400px;
+
+    color: #fff;
+}
+.user__text > span{
+    font-weight: 700;
+}
+
+.user__items{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-top: 22px;
+}
+
+@media screen and (max-width:575px) {
+    .user__items{
+        display: grid;
+        grid-template-columns: 1fr;
+
+        width: 80vw;
+    }
+}
+
+.user__item{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+
+    color: #fff;
+
+    margin: 0 5px 13px;
+    padding: 10px 25px;
+    padding-left: 30px;
+    
+    border-radius: 40px;
+
+    text-decoration: none;
+
+    transition: .3s;
+}
+
+.user__item:hover{
+    transform: scale(1.05);
+}
+
+.user__item_facebook{
+    background-color: #4867AA;
+    border: 2.5px solid #253c6e;
+}
+.user__item_telegram{
+    background-color: #32A9E1;
+    border: 2.5px solid rgb(28, 49, 94);
+}
+.user__item_youtube{
+    background-color: #F30817;
+    border: 2.5px solid #85141c
+}
+.user__item_cv{
+    background-color: rgb(56, 56, 56);
+    border: 2.5px solid rgb(37, 36, 36);
+}
+
+.user__item_instagram{
+    background: #f09433; 
+    background: -moz-linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%); 
+    background: -webkit-linear-gradient(45deg, #f09433 0%,#e6683c 25%,#dc2743 50%,#cc2366 75%,#bc1888 100%); 
+    background: linear-gradient(45deg, #f09433 0%,#e6683c 25%,#dc2743 50%,#cc2366 75%,#bc1888 100%); 
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f09433', endColorstr='#bc1888',GradientType=1 );
+    border: 2px solid #a31c37;
+}
+
+
+
+@media screen and (max-width:575px) {
+    .user__item{
+        width: auto;
+
+        justify-content: start;
+    }
+}
+
+
+.user__item-text{
+    font-size: 19px;
+}
+.user__icon{
+    display: inline-block;
+    transition: 0.3s;
+    margin-right: 5px;
+
+    max-height: 25px;
+    width: auto;
+}
+
+.user__item:hover .user__icon{
+    transform: translateX(-8px);
+}
+

@@ -10,7 +10,7 @@
 
 .profile-program__items{
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: 1fr auto;
     grid-gap: 15px;
 }
 @media screen and (max-width: 992px) {
@@ -27,10 +27,16 @@
     box-sizing: border-box;
     border-radius: 10px;
 }
-.profile-program__item-text{
+.profile-program__item-content{
     margin-top: 20px;
     margin-left: 15px;
 }
-.profile-program__item-text{
+.profile-program__item-content{
     line-height: 1.55;
+}
+
+
+.profile-program__item-diagram{
+    display: flex;
+    justify-content: start;
 }

@@ -1,0 +1,37 @@
+<section class="courses-modal">
+    <div class="courses-modal__button">
+    </div>
+    <div class="courses-modal__inner hidden-scroller_y">
+        <div class="courses-modal__content">
+            <div class="courses-modal__title h2 text_blue">
+                РЕГИСТРАЦИЯ НА КУРС
+            </div>
+            <div class="courses-modal__subtitle h3 text_blue">
+                "{{ title|capfirst }}"
+            </div>
+            <div class="courses-modal__text text_blue">
+                {{ desc }}
+            </div>
+        
+            <div class="go-to-university margin-bottom">
+                    <div class="go-to-university__inner">
+                        <div class="h3 text_blue go-to-university__title">
+                        </div>   
+                        <form action="" method="post" class="courses-modal__form">
+                            {% csrf_token %}
+                            {% for field in form%}
+                                {{ field }}
+                            {% endfor %}
+                            <div class="button flex-button theme-green courses-modal__form-button">    
+                                <button class="button theme-green" type="submit">Записаться на курс</button>
+                            </div>
+                        </form>
+                    </div>
+                     
+            </div>
+
+        </div>
+
+    </div>
+
+</section>

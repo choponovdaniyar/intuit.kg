@@ -33,7 +33,8 @@
         
         <div class="programs__content">
             {% for profile in profiles %}
-                <a href="{{ profile.get_absolute_url }}" class="a program-wrapper">
+                {% if page|lower == 'курсы' %}
+                <div class="a program-wrapper">
                     <div class="program">
                         <div class="program__education" style="display: none;">
                             {{ profile.education }}
@@ -48,8 +49,28 @@
                         <div class="program__title a_green h4">
                             {{ profile.title|lower|capfirst }}
                         </div>
-                    </div>            
-                </a>
+                    </div> 
+                    {% include 'bases/course.html' with title=profile.title desc=profile.description%}           
+                </div>
+                {% else %}
+                    <a href="{{ profile.get_absolute_url }}" class="a program-wrapper">
+                        <div class="program">
+                            <div class="program__education" style="display: none;">
+                                {{ profile.education }} ads 
+                            </div>
+                            <div class="program__faculty text_blue">
+                                <div class="program__faculty-title">{{ profile.faculty|lower|capfirst }}</div>
+                                <div class="program__faculty-icon">
+                                    <img src="{% static 'img/icons/program.svg' %}" alt="" class="program__faculty-icon">
+                                </div>
+                                
+                            </div>
+                            <div class="program__title a_green h4">
+                                {{ profile.title|lower|capfirst }}
+                            </div>
+                        </div>            
+                    </a>
+                {% endif %}
             {% endfor %}
         </div>
         <div class="program__button">

@@ -1,0 +1,106 @@
+.courses-modal__button{
+    position: absolute;
+    right: 15px;
+    top: 15px;
+    z-index: 2;
+
+    width: 40px;
+    height: 40px;
+    background-color: rgba(0, 0, 0, 0.8);
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+.courses-modal__button::after{
+
+    content: "";
+    display: block;
+
+    position: relative;
+    right: 2px;
+
+    height: 80%;
+
+    transform: rotate(45deg);
+    width: 3px;
+    background-color: rgb(240,240,240);
+}
+.courses-modal__button::before{
+    position: relative;
+    left: 2px;
+
+    content: "";
+    display: block;
+
+    height: 80%;
+
+    transform: rotate(-45deg);
+    width: 3px;
+    background-color: rgb(240,240,240);
+}
+
+
+.courses-modal{
+    position: fixed;
+    top: 0;
+    left: 0;
+
+    width: 100vw;
+    height: 100vh;
+
+    display: none;
+    /* align-items: center; */
+    justify-content: center;
+
+    background-color: rgba(0, 0, 0, 0.40);
+
+}
+
+.courses-modal__inner{
+
+    width: 90vw;
+    max-width: 750px;
+    height: auto;
+
+    text-align: center;
+
+    position: relative;
+    top: 70px;
+
+    max-height: calc(95vh - 70px);
+
+    padding: 20px;
+
+    background-color: #fff;
+
+    box-sizing: border-box;
+
+    overflow-y: scroll;
+}
+
+.courses-modal__title{
+    text-transform: uppercase;
+    margin-bottom: 10px;
+}
+
+.courses-modal__subtitle{
+    margin-bottom: 10px;
+}
+
+.courses-modal__text{
+    margin-bottom: 50px;
+}
+
+.courses-modal__form{
+    display: flex;  
+    flex-direction: column;
+    align-items: center;
+}
+
+
+.courses-modal__form-button{
+    width: 232px;
+}
+

@@ -1,0 +1,59 @@
+{% load static %}
+<section class="user "
+         style="background: url('https://img2.akspic.ru/crops/8/2/9/0/4/140928/140928-nebo-gora-gornyj_hrebet-minimalizm-televideniye-3840x2160.jpg') center no-repeat;"
+>
+    
+    <div class="container user__inner">
+        <div class="user__logo">
+            <div class="user__logo-box">
+                <img src="{{ user.image.url }}" alt="" class="user__img">
+            </div>
+            <div class="user__title h3 text_white" >
+                {{ user.name }}
+            </div>
+            <div class="user__text ">
+                {{ user.description }}
+            </div>
+        </div>
+        <div class="user__items">
+            {% if user.instagram %}
+                <a href="{{ user.instagram }}" class="user__item user__item_instagram">
+                    <img src="{% static 'img/icons/instagram-brands.svg' %}" alt="" class="user__icon">
+                    <span class="user__item-text">Instagram</span>
+                </a>
+            {% endif %}
+
+            {% if user.telegram %}
+                <a href="{{ user.telegram }}" class="user__item user__item_telegram">
+                    <img src="{% static 'img/icons/telegram-brands.svg' %}" alt="" class="user__icon">
+                    <span class="user__item-text">Telegram</span>
+                </a>
+            {% endif %}
+
+            {% if user.facebook %}
+                <a href="{{ user.facebook }}" class="user__item user__item_facebook">
+                    <img src="{% static 'img/icons/facebook-brands.svg' %}" alt="" class="user__icon">
+                    <span class="user__item-text">Facebook</span>
+                </a>
+            {% endif %}
+
+            {% if user.youtube %}
+                <a href="{{ user.youtube }}" class="user__item user__item_youtube">
+                    <img src="{% static 'img/icons/youtube-brands.svg' %}" alt="" class="user__icon">
+                    <span class="user__item-text">YouTube</span>
+                </a>
+            {% endif %}
+
+            {% if user.curriculum_vitae %}
+                <a href="{{ user.curriculum_vitae.url }}" class="user__item user__item_cv">
+                    <img src="{% static 'img/icons/cv-brands.svg' %}" alt="" class="user__icon">
+                    <span class="user__item-text">CV</span>
+                </a>
+            {% endif %}
+            
+    
+        
+        </div>
+    </div>
+
+</section>

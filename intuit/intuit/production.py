@@ -4,7 +4,7 @@ import os
 BASE_DIR = Path(__file__).resolve().parent.parent
 
 
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = ["intuit.kg", "localhost"]
 
@@ -16,6 +16,6 @@ DATABASES = {
     }
 }
 
-STATIC_ROOT = os.path.join(BASE_DIR, "static/")
-
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+
+STATIC_ROOT = os.path.join(BASE_DIR, 'static')

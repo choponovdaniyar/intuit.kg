@@ -33,7 +33,7 @@ class ProfileAdmin(admin.ModelAdmin):
             "fields": (( "description", "work_places", "suitable",))
         }),
         (None, {
-            "fields": (( "teachers", "courses", "skills", "professions", "documents"))
+            "fields": ((  "courses", "skills", "professions", "documents"))
         }),
         
         
@@ -47,7 +47,7 @@ class ProfileAdmin(admin.ModelAdmin):
 
     prepopulated_fields = {"slug": ["title"]}
 
-    filter_horizontal = ["courses", "teachers", "skills", 
+    filter_horizontal = ["courses", "skills", 
                             "documents", "professions", "details"]         
     list_per_page = 10
     save_on_top = True
@@ -88,7 +88,7 @@ class EducationAdmin(admin.ModelAdmin):
     list_display = [ 'title'] 
     search_fields = [ "title"]
     prepopulated_fields = {"slug": ["title"]}
-    filter_horizontal = ["detail", "special_abilities", "eduform", "info", "documents"]
+    filter_horizontal = ["detail", "special_abilities", "eduform", "info", "documents", "teachers"]
 
 
 
@@ -126,6 +126,7 @@ class DetailAdmin(admin.ModelAdmin):
 @admin.register(TeacherModel)
 class TeacherAdmin(admin.ModelAdmin):
     search_fields   = [ "name" ]
+    prepopulated_fields = {"slug": ["name"]}
     list_display = [ 'name', 'get_photo']
     list_filter = [ "name" ] 
     list_per_page = 20

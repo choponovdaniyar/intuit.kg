@@ -4,7 +4,7 @@ from django.views.generic.base import TemplateView
 from django.views.generic.edit import FormView
 from django.core.mail import send_mail
 
-from .models import DetailModel, EducationModel, FacultyModel, ProfileModel, SpecialAbilitiesModel
+from .models import DetailModel, EducationModel, FacultyModel, ProfileModel, SpecialAbilitiesModel, TeacherModel
 from main import forms as main_forms
 from main import views as main_views
 from main import models as main_models
@@ -115,6 +115,7 @@ class EducationListView(ListView, FormView):
             object_list = self.get_education().education.all(),
             **kwargs)
         context["title"] = self.get_education()
+        context["go_to"] = main_forms.InteresUser()
         return context
     
     def get_success_url(self):
@@ -303,3 +304,17 @@ class FacultyFormView(FacultyListView, FormView):
         else:
             return self.form_invalid(form)
 
+
+
+class TeacherView(TemplateView):
+    template_name = 'faculty/teacher.html'
+
+
+    def get_teacher(self):
+        print(self.kwargs)
+        return get_object_or_404(TeacherModel, slug=self.kwargs["teacher"])
+
+    def get_context_data(self, **kwargs):
+        context=super().get_context_data(**kwargs)
+        context["teacher"]=self.get_teacher()
+        return context

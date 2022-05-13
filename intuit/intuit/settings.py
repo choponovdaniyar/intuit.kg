@@ -23,7 +23,9 @@ INSTALLED_APPS = [
 
     'main.apps.MainConfig',
     'news.apps.NewsConfig',
-    'faculty.apps.FacultyConfig'
+    'faculty.apps.FacultyConfig',
+
+    'qr_code',
 ]
 
 MIDDLEWARE = [
@@ -84,9 +86,9 @@ STATICFILES_DIR = [
     BASE_DIR / "static",
 ]
 
+
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 MEDIA_URL = '/media/'
-
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 

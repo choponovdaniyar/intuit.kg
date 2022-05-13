@@ -2,38 +2,50 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
-        {% block head%}
+
+        <title>{{ title }}</title>
+
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+        <!-- Дополнительный css  -->
+        {% block head %}
         {% endblock %}
-        <link rel="stylesheet" href="{% static 'css/index/admission.css' %}">
-        <link rel="stylesheet" href="{% static 'css/index/go-to-university.css' %}">
-        <link rel="stylesheet" href="{% static 'css/index/open-door-day.css' %}">
-        <link rel="stylesheet" href="{% static 'css/index/open-door-day-form.css' %}">
-        <link rel="stylesheet" href="{% static 'css/index/top.css' %}">
-        <link rel="stylesheet" href="{% static 'css/index/quiz.css' %}">
-        <link rel="stylesheet" href="{% static 'css/index/catalog.css' %}">
-        <link rel="stylesheet" href="{% static 'css/index/about.css' %}">
-    
-    
-        <link rel="stylesheet" href="{% static 'css/base/base.css' %}">
-        <link rel="stylesheet" href="{% static 'css/base/elems.css' %}">
+        
+        <link rel="stylesheet" href="{% static 'css/base/about.css' %}">
+        <link rel="stylesheet" href="{% static 'css/base/burger.css' %}">
+        <link rel="stylesheet" href="{% static 'css/base/catalog.css' %}">
+        <link rel="stylesheet" href="{% static 'css/base/courses-modal.css' %}">
+        <link rel="stylesheet" href="{% static 'css/base/diploms.css' %}">
+        <link rel="stylesheet" href="{% static 'css/base/docs.css' %}">
+        <link rel="stylesheet" href="{% static 'css/base/edu-forms.css' %}">
+        <link rel="stylesheet" href="{% static 'css/base/go-to-university.css' %}">
+        <link rel="stylesheet" href="{% static 'css/base/page-desc.css' %}">
+        <link rel="stylesheet" href="{% static 'css/base/programs.css' %}">
+        <link rel="stylesheet" href="{% static 'css/base/special-features.css' %}">
+        <link rel="stylesheet" href="{% static 'css/base/courses-modal.css' %}">
+   
         <link rel="stylesheet" href="{% static 'css/base/header.css' %}">
         <link rel="stylesheet" href="{% static 'css/base/footer.css' %}">
-        <link rel="stylesheet" href="{% static 'css/base/burger.css' %}">
+        <link rel="stylesheet" href="{% static 'css/base/base.css' %}">
+        <link rel="stylesheet" href="{% static 'css/base/elems.css' %}">
     </head>
     <body>
-        {% block header%}
+        
+        {% include 'bases/header.html' %}
+
+        {% block main %}
         {% endblock %}
         
-        <main> 
-            {% block main %}
-            {% endblock %}
-        </main>
-        
-        {% block footer %}
-        {% endblock %}
+        {% include 'bases/footer.html' %}
         
         {% block scripts %}
         {% endblock %}
         
+        <!-- scripts -->
+        <script src="{% static 'js/jquery-3.6.0.min.js' %}"></script>
+        <script src="{% static 'js/burger.js' %}"></script>
+        <script src="{% static 'js/accordion.js' %}"></script>
     </body>
 </html>

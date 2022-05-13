@@ -9,6 +9,8 @@
 
 .teachers__content{
     display: flex;
+
+    padding-bottom: 20px;
 }
 
 .teacher{
@@ -16,7 +18,8 @@
     grid-template-columns: auto;
     grid-gap: 12px;
 
-    min-width: 316px;
+    width: 340px;
+    
     
     box-sizing: border-box;
     padding: 25px;
@@ -29,21 +32,52 @@
 }
 @media screen and (max-width: 575px) {
     .teacher{
-        min-width: 216px;
+        width: 250px;
     }
 }
+
+.teacher__imgs{
+    display: flex;
+}
+
 .teacher__img{
     border-radius: 100%;
 }
 
 .teacher__img-inner{
     border-radius: 100%;
-    max-width: 100%;
-    max-height: 100%;
+
+    width: 150px;
+    height: 150px;
+
+    object-fit: cover;
 }
+@media screen and (max-width: 575px) {
+    .teacher__img-inner{
+        width: 100px;
+        height: 100px;
+    }
+}
+
+
+.segno{
+    max-width: 150px;
+    height: auto;
+}
+@media screen and (max-width: 575px) {
+    .segno{
+        width: 100px;
+        height: 100px;
+    }
+}
+
+
+
 .teacher__title{
     line-height: 1.25;
 }
 .teacher__text{
     line-height: 1.55;
+
+    text-align: left;
 }

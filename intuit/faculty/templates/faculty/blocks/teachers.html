@@ -1,3 +1,5 @@
+{% load qr_code %}
+{% load tags %}
 <div class="teachers margin-bottom">
     <div class="container">
         <div class="teachers__title h2 text_blue">
@@ -8,104 +10,28 @@
             {% endif%}
         </div>
         <div class="teachers__content hidden-scroller_x">
-          <!--
-            <div class="teacher">
-                <div class="teacher__img">
-                    <img src="https://synergy.ru/assets/components/phpthumbof/cache/Lednew_new.7ac1f648362bdc7392eddacafc601dad.png" alt="" class="teacher__img-inner">
-                </div>
-                <div class="teacher__title h4">
-                    Леднев Владимир Алексеевич
-                </div>
-                <div class="teacher__text">
-                    Вице-президент Университета «Синергия», заведующий кафедрой 
-                    Спортивного менеджмента, доктор эк. наук, профессор, почетный 
-                    работник высшего проф. образования РФ. Член Экспертного совета 
-                    при Комитете Госдумы по физической культуре, спорту, туризму 
-                    и делам молодежи, член рабочей группы Совета по профессиональным 
-                    квалификациям в сфере физической культуры и спорта
-                </div>
-            </div>
-            <div class="teacher ">
-                <div class="teacher__img">
-                    <img src="https://synergy.ru/assets/components/phpthumbof/cache/Lednew_new.7ac1f648362bdc7392eddacafc601dad.png" alt="" class="teacher__img-inner">
-                </div>
-                <div class="teacher__title h4">
-                    Леднев Владимир Алексеевич
-                </div>
-                <div class="teacher__text">
-                    Вице-президент Университета «Синергия», заведующий кафедрой 
-                    Спортивного менеджмента, доктор эк. наук, профессор, почетный 
-                    работник высшего проф. образования РФ. Член Экспертного совета 
-                    при Комитете Госдумы по физической культуре, спорту, туризму 
-                    и делам молодежи, член рабочей группы Совета по профессиональным 
-                    квалификациям в сфере физической культуры и спорта
-                </div>
-            </div>
-            <div class="teacher">
-                <div class="teacher__img">
-                    <img src="https://synergy.ru/assets/components/phpthumbof/cache/Lednew_new.7ac1f648362bdc7392eddacafc601dad.png" alt="" class="teacher__img-inner">
-                </div>
-                <div class="teacher__title h4">
-                    Леднев Владимир Алексеевич
-                </div>
-                <div class="teacher__text">
-                    Вице-президент Университета «Синергия», заведующий кафедрой 
-                    Спортивного менеджмента, доктор эк. наук, профессор, почетный 
-                    работник высшего проф. образования РФ. Член Экспертного совета 
-                    при Комитете Госдумы по физической культуре, спорту, туризму 
-                    и делам молодежи, член рабочей группы Совета по профессиональным 
-                    квалификациям в сфере физической культуры и спорта
-                </div>
-            </div>
-            <div class="teacher">
-                <div class="teacher__img">
-                    <img src="https://synergy.ru/assets/components/phpthumbof/cache/Lednew_new.7ac1f648362bdc7392eddacafc601dad.png" alt="" class="teacher__img-inner">
-                </div>
-                <div class="teacher__title h4">
-                    Леднев Владимир Алексеевич
-                </div>
-                <div class="teacher__text">
-                    Вице-президент Университета «Синергия», заведующий кафедрой 
-                    Спортивного менеджмента, доктор эк. наук, профессор, почетный 
-                    работник высшего проф. образования РФ. Член Экспертного совета 
-                    при Комитете Госдумы по физической культуре, спорту, туризму 
-                    и делам молодежи, член рабочей группы Совета по профессиональным 
-                    квалификациям в сфере физической культуры и спорта
-                </div>
-            </div>
-            <div class="teacher">
-                <div class="teacher__img">
-                    <img src="https://synergy.ru/assets/components/phpthumbof/cache/Lednew_new.7ac1f648362bdc7392eddacafc601dad.png" alt="" class="teacher__img-inner">
-                </div>
-                <div class="teacher__title h4">
-                    Леднев Владимир Алексеевич
-                </div>
-                <div class="teacher__text">
-                    Вице-президент Университета «Синергия», заведующий кафедрой 
-                    Спортивного менеджмента, доктор эк. наук, профессор, почетный 
-                    работник высшего проф. образования РФ. Член Экспертного совета 
-                    при Комитете Госдумы по физической культуре, спорту, туризму 
-                    и делам молодежи, член рабочей группы Совета по профессиональным 
-                    квалификациям в сфере физической культуры и спорта
-                </div>
-            </div>
-            <div class="teacher">
-                <div class="teacher__img">
-                    <img src="https://synergy.ru/assets/components/phpthumbof/cache/Lednew_new.7ac1f648362bdc7392eddacafc601dad.png" alt="" class="teacher__img-inner">
-                </div>
-                <div class="teacher__title h4">
-                    Леднев Владимир Алексеевич
-                </div>
-                <div class="teacher__text">
-                    Вице-президент Университета «Синергия», заведующий кафедрой 
-                    Спортивного менеджмента, доктор эк. наук, профессор, почетный 
-                    работник высшего проф. образования РФ. Член Экспертного совета 
-                    при Комитете Госдумы по физической культуре, спорту, туризму 
-                    и делам молодежи, член рабочей группы Совета по профессиональным 
-                    квалификациям в сфере физической культуры и спорта
-                </div>
-            </div>
-          -->
+            {% for teacher in teachers %}
+                <a class="a" href="{{ teacher.get_absolute_url }}">
+                    <div class="teacher text_blue">
+                        <div class="teacher__imgs">
+                            <div class="teacher__img">
+                                <img src="{{ teacher.image.url }}" alt="" class="teacher__img-inner">
+                                
+                            </div>
+                            {% qr_from_text teacher.get_absolute_url|website %}
+                        </div>
+                        <div class="teacher__title h4">
+                            {{ teacher.name }}
+                        </div>
+                        <div class="teacher__text">
+                                
+                        </div>
+                    </div>
+                </a>
+            {% endfor %}
+
+
+
         </div>
     </div>
 </div>

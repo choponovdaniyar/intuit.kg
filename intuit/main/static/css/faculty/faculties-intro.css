@@ -31,11 +31,6 @@
 }
 
 
-.faculties-intro__info-inner{
-    max-width: 53.25rem;
-}
-
-
 .faculties-intro__title{
     margin-bottom: 25px;
 }
@@ -50,8 +45,29 @@
     }
 }
 .faculties-intro__text{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 20px;
+
+    text-align: justify;
+
     line-height: 1.60;
 }
+@media screen and (max-width:768px){
+    .faculties-intro__text{
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
+    }
+}
+
+.faculties-intro__text p{
+    border: 1px solid #DDE0EA;
+    border-radius: 10px;
+
+    padding: 10px;
+    box-sizing: border-box;
+}
+
 
 
 .faculties-intro__items{

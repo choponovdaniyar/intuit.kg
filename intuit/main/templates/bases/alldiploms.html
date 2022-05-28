@@ -1,0 +1,86 @@
+{% load static %}
+<div class="diploms margin-bottom">
+    <div class="container">
+        <div class="diploms__content">
+            <div class="h2 diploms__title text_blue">
+                Твой будущий диплом
+            </div>
+        </div>    
+        {% with '/static/img/icons/gerb.png' as gerb %}
+        <div class="diploms__items hidden-scroller">
+            <div class="diploms__item">
+                <div class="diploms__icon ">
+                    <img 
+                        class="diploms__icon-img"
+                        src="{{ gerb }}" alt="">
+                </div>
+                <div class="h3 diploms__item-title">
+                    Диплом бакалавра
+                </div>
+                <div class="diploms__search">
+                    <a class="diploms__search-inner a" href="/media/faculty/images/documents/ДипломБакалавра.png">
+                        <div class="diploms__search-text">
+                            Посмотреть
+                        </div>
+                        <img src="{% static 'img/icons/search.svg' %}" alt="">
+                    </a>
+                </div>
+            </div>
+            <div class="diploms__item">
+                <div class="diploms__icon ">
+                    <img 
+                        class="diploms__icon-img"
+                        src="{{ gerb }}" alt="">
+                </div>
+                <div class="h3 diploms__item-title">
+                    Диплом магистра
+                </div>
+                <div class="diploms__search">
+                    <a class="diploms__search-inner a" href="/media/faculty/images/documents/%D0%94%D0%B8%D0%BF%D0%BB%D0%BE%D0%BC%D0%9C%D0%B0%D0%B3%D0%B8%D1%81%D1%82%D1%80%D0%B0.png">
+                        <div class="diploms__search-text">
+                            Посмотреть
+                        </div>
+                        <img src="{% static 'img/icons/search.svg' %}" alt="">
+                    </a>
+                </div>
+            </div>
+            <div class="diploms__item">
+                <div class="diploms__icon ">
+                    <img 
+                        class="diploms__icon-img"
+                        src="{{ gerb }}" alt="">
+                </div>
+                <div class="h3 diploms__item-title">
+                    Диплом аспиранта
+                </div>
+                <div class="diploms__search">
+                    <a class="diploms__search-inner a" href="/media/faculty/documents/европейское_приложение_диплома.pdf">
+                        <div class="diploms__search-text">
+                            Посмотреть
+                        </div>
+                        <img src="{% static 'img/icons/search.svg' %}" alt="">
+                    </a>
+                </div>
+            </div>
+            <div class="diploms__item">
+                <div class="diploms__icon ">
+                    <img 
+                        class="diploms__icon-img"
+                        src="https://bonamark.com/themes/custom/bonamark/images/flags/european_union.png" alt="">
+                </div>
+                <div class="h3 diploms__item-title">
+                    Diploma Supplement       
+                </div>
+                <div class="diploms__search">
+                    <a class="diploms__search-inner a" href="/media/faculty/documents/европейское_приложение_диплома.pdf">
+                        <div class="diploms__search-text">
+                            Посмотреть
+                        </div>
+                        <img src="{% static 'img/icons/search.svg' %}" alt="">
+                    </a>
+                </div>
+            </div> 
+        </div>
+        {% endwith %}
+    </div>     
+</div>

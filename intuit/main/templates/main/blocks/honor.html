@@ -1,0 +1,31 @@
+{% load qr_code %}
+{% load tags %}
+<div class="honor margin-top">
+    <div class="container">
+        <div class="honor__title h2 text_blue">
+            {{ title }}
+        </div>
+        <div class="honor__teachers">
+        {% for user in users %}
+            <a class="a honor__teacher" href="/teachers/{{ user.slug }}">
+                <div class=" teacher text_blue">
+                    <div class="teacher__imgs">
+                        <div class="teacher__img">
+                            <img src="{{ user.image.url }}" alt="" class="teacher__img-inner">
+                            
+                        </div>
+                        {% qr_from_text user.get_absolute_url|website %}
+                    </div>
+                    <div class="teacher__title h4">
+                        {{ user.name }}
+                    </div>
+                    <div class="teacher__text">
+                        {{ user.description }}
+                    </div>
+                </div>
+            </a>
+        {% endfor %}
+        </div>
+    </div>
+</div>
+

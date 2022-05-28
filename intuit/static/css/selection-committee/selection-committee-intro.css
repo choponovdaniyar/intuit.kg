@@ -7,7 +7,10 @@
 }
 
 .selection-committee-intro__text{
-    width: 90%;
+    border: 1px solid #DDE0EA;
+    border-radius: 10px;
+    padding: 10px;
+    box-sizing: border-box;
 }
 @media screen and (max-width: 768px) {
     .selection-committee-intro__text{

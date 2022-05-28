@@ -24,9 +24,9 @@
                         function drawChart() {
                             var data = google.visualization.arrayToDataTable([
                                 ['Обучение', 'Обучение'],
-                                ['Технические',     Number('{{forloop.counter}}')],
-                                ['Естественные',     Number('{{forloop.counter}}')],
-                                ['Гуманитарные',     Number('{{forloop.counter}}')],
+                                ['Технические',     Number('{{program.scale1}}')],
+                                ['Естественные',     Number('{{program.scale2}}')],
+                                ['Гуманитарные',     Number('{{program.scale3}}')],
                             ]);
                             var options = {
                                 pieHole: 1,
@@ -34,9 +34,9 @@
                                     color: 'white',
                                 },
                                 chartArea: {
-                                    top: 0,
-                                    width: '100%',
-                                    height: '100%'
+                                    top: '5%',
+                                    width: '90%',
+                                    height: '90%'
                                 },
                                 legend: 'left'
                             

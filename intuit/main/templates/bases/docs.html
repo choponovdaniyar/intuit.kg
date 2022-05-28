@@ -2,7 +2,7 @@
     <div class="container">
         {% if title.lower == 'главная' %}
             <div class="docs margin-bottom" id="main-page">
-                <a href="/media/faculty/documents/Лицензия.jpg" class="a">
+                <a href="/media/faculty/images/documents/licenzfd.pdf" class="a" target="_blank">
                     <div class="doc">
                         
                         <div class="doc-text text">
@@ -16,8 +16,18 @@
                         </svg>
                     </div>
                 </a>
+                <a href="/media/faculty/images/documents/muit_bB9d3Mu.pdf" class="a" target="_blank">
+                    <div class="doc">
+                        <div class="doc-text text">
+                            Свидетельство о независимой аккредитации программ бакалавриата
+                        </div>
+                        <svg class="doc-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" class="svg replaced-svg">
+                            <path d="M5 12H19" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+                            <path d="M12 5L19 12L12 19" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+                        </svg>
+                    </div>
                 </a>
-                <a href="/media/faculty/documents/акредитация_магистра.pdf" class="a">
+                <a href="/media/faculty/documents/акредитация_магистра.pdf" class="a" target="_blank">
                     <div class="doc">
                         <div class="doc-text text">
                             Свидетельство о независимой аккредитации программ магистратуры
@@ -29,21 +39,11 @@
                         </svg>
                     </div>
                 </a>
-                <a href="/media/faculty/documents/акредитация_бакалавра.pdf" class="a">
-                    <div class="doc">
-                        <div class="doc-text text">
-                            Свидетельство о независимой аккредитации программ бакалавриата
-                        </div>
-                        <svg class="doc-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" class="svg replaced-svg">
-                            <path d="M5 12H19" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
-                            <path d="M12 5L19 12L12 19" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
-                        </svg>
-                    </div>
-                </a>
             </div>  
         {% else %}
             <div class="docs margin-bottom">
                 {% for doc in docs %}
+                    {% if doc.documents.url %}
                     <a href="{{ doc.document.url }}" class="a">
                         <div class="doc">                            
                             <div class="doc-text text">
@@ -55,6 +55,7 @@
                             </svg>
                         </div>
                     </a>
+                    {% endif %}
                 {% endfor %}
             </div>
         {% endif %}

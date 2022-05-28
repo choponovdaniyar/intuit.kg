@@ -31,21 +31,20 @@
         <link rel="stylesheet" href="{% static 'css/base/base.css' %}">
         <link rel="stylesheet" href="{% static 'css/base/elems.css' %}">
     </head>
-    <body>
-        
+    <body>      
         {% include 'bases/header.html' %}
 
         {% block main %}
-        {% endblock %}
+        {% endblock %} 
         
         {% include 'bases/footer.html' %}
-        
-        {% block scripts %}
-        {% endblock %}
+    
         
         <!-- scripts -->
         <script src="{% static 'js/jquery-3.6.0.min.js' %}"></script>
         <script src="{% static 'js/burger.js' %}"></script>
         <script src="{% static 'js/accordion.js' %}"></script>
+        {% block scripts %}
+        {% endblock %}
     </body>
 </html>

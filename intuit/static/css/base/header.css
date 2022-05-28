@@ -25,7 +25,7 @@
 }
 .header__inner{
     display: grid;
-    grid-template-columns: auto 1fr auto;
+    grid-template-columns: auto 1fr max-content;
     align-items: center;
 }
 
@@ -58,9 +58,6 @@
 
 
 @media screen and (max-width: 768px) {
-    .header__inner{
-        grid-template-columns: auto auto;
-    }
     .header__logo{
         justify-self: start;
     }
@@ -75,6 +72,10 @@
 
 }
 
+
+.header__burger{
+    padding-left: 30px;
+}
 @media screen and (max-width: 560px) {
     .header__phones{
         justify-self: center;
@@ -99,10 +100,46 @@
 .header__educations::-webkit-scrollbar{
     display: none;
 }
-
-
 .header__education{
     margin-right: 50px;
 }
 
+.header__button{
+    justify-self: end;
 
+    padding: 5px;
+    box-sizing: border-box;
+    
+    border-radius: 4px;
+    border: 2px solid #2A2173;
+
+    transition: .2s all;
+}
+.header__inner_2{
+    display: flex;
+    justify-content: end;
+}
+.header__button:hover{
+    background-color: #2A2173;
+    color:  white;
+}
+
+
+
+.haeder__content{
+    display: flex;
+    justify-content: end;
+    align-items: center;
+}
+
+.header__inner_2{
+    display: none;
+}
+@media screen and (max-width: 575px){
+    .header__inner > .header__button{ 
+        display: none;
+    }
+    .header__inner_2{
+        display: flex;
+    }
+}

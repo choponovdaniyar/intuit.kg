@@ -102,7 +102,6 @@ body{
 }
 @media screen and (max-width: 768px) {
     .h1{
-        max-width: 310px;
 
         font-size: 58px;
         line-height: 1.15;
@@ -110,7 +109,6 @@ body{
 }
 @media screen and (max-width: 576px) {
     .h1{
-        max-width: 200px;
 
         font-size: 32px;
         

@@ -13,7 +13,7 @@ class Quiz {
     }
 
     toggleQuition(quition){
-        if($(this).text() == "Отправить"){
+        if($(quition).text() == "Отправить"){
             let inputs = $(".quiz input");
             let len = inputs.length;
             

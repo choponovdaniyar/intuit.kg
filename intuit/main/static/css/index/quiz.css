@@ -3,9 +3,7 @@ main{
 }
 
 .quiz{
-    position: relative;
-
-
+    position: relative;    
     max-width: 100%;
 
     min-height: 538px;
@@ -13,18 +11,22 @@ main{
 
     color: #E8EDF9;
 }
+
+
 @media screen and (max-width: 992px){
     .quiz{
         min-height: 411px;
     }
 }
 
+
+
 .quiz__title{
     color: inherit;
     
     margin-bottom: 42px;
 
-    max-width: 70%;
+    /* max-width: 70%; */
 }
 @media screen and (max-width: 768px) {
     .quiz__title{
@@ -47,22 +49,9 @@ main{
 
 .quiz__welcome{
     position: absolute;
-    bottom: -35px;
-    right: 18px;
+    bottom: -34px;
+    right: 0px;
 }
-@media screen and (max-width: 992px) {
-    .quiz__welcome{
-        position: absolute;
-        right: 5%
-    }
-}
-@media screen and (max-width: 576px) {
-    .quiz__welcome{
-        position: absolute;
-        right: 10%;
-    }
-}
-
 
 .quiz__item{
     display: none;
@@ -74,6 +63,7 @@ main{
     grid-gap: 10px;
     
     align-items: center;
+    justify-content: start;
 
     font-size: 32px;
     line-height: 1.2;
@@ -102,6 +92,7 @@ main{
 
     border: 3px solid;
     border-radius: 100%;
+    /* grid-row: 2 / 3; */
 }
 @media screen and (max-width: 768px) {
     .quiz__quition-left{
@@ -123,3 +114,4 @@ main{
 .quiz__form{
     display: none;
 }
+

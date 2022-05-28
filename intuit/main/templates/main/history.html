@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+
+{% block head %}
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/history/history.css'%}">
+{% endblock %}
+
+
+{% block main %}
+    <main>
+        {% include 'main/blocks/history.html' %}
+    </main>
+{% endblock %}

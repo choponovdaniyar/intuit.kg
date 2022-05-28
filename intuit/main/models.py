@@ -12,7 +12,7 @@ class ChoiceProgram(models.Model):
     date = models.DateTimeField(verbose_name="Дата регистрации", default=datetime.now())
     user = models.CharField(verbose_name="Имя", max_length=50)
     phone = models.CharField(verbose_name="Телефон", max_length=25)
-    email = models.CharField(verbose_name="e-mail", max_length=50)
+    email = models.EmailField(verbose_name="e-mail", max_length=50)
     type = models.CharField(verbose_name="Тип", max_length=20)
     profile = models.CharField(verbose_name="Направление", max_length=100)
     edu_form = models.CharField(verbose_name="Форма обучения", max_length=20)
@@ -36,9 +36,11 @@ class InteresUserModel(models.Model):
     status = models.CharField(verbose_name="Статус", choices=STATUS_CHOISE, max_length=15,
                                 default="active")
     date = models.DateTimeField(verbose_name="Дата регистрации", default=datetime.now())
-
+    
     user = models.CharField(verbose_name="Имя", max_length=250)
     phone = models.CharField(verbose_name="Телефон", max_length=50)
+    email = models.EmailField(verbose_name="e-mail", max_length=50, default="none@gmail.com")
+
     category = models.ForeignKey(verbose_name="Категория", on_delete=models.CASCADE,
                                 to="InteresCategoryModel")
 
@@ -74,3 +76,14 @@ class PartnersModel(models.Model):
     def __str__(self):
         return self.title
 
+
+class QuestionModel(models.Model):
+    question = models.TextField(verbose_name="Вопрос")
+    answer = models.TextField(verbose_name="Ответ")
+
+    class Meta:
+        ordering = [ "question" ]
+        verbose_name = "Вопрос/ответ"
+        verbose_name_plural = "Вопросы/ответы"
+    def __str__(self):
+        return self.question

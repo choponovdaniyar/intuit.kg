@@ -51,6 +51,7 @@
     align-items: center;
     grid-gap: 10px;
 }
+
 @media screen and (max-width: 768px) {
     .networks{
         grid-gap: 10px;
@@ -65,7 +66,7 @@
 
 .networks__content{
     display: inline-grid;
-    grid-template-columns: repeat(4, auto);
+    grid-template-columns: repeat(3, auto);
     grid-gap: 15px;
 }
 
@@ -294,18 +295,19 @@ nav{
 .hidden-scroller_y{
     overflow-y: scroll;
     scrollbar-color: #2A2173 #E8EDF9;
+
+    scrollbar-width: thin;
 }
 ::-webkit-scrollbar{
-    height: 5px;
+    height: 10px;
+    width: 10px;
 
 }
 
 ::-webkit-scrollbar-track{
     background-color: #E8EDF9;
-    border-radius: 5px;
     color: #2A2173;
 }
 ::-webkit-scrollbar-thumb{
-    background-color: #2A2173;
-    border-radius: 5px;
+    background-color: #2A2173;  
 }

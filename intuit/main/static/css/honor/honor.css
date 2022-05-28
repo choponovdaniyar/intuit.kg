@@ -1,0 +1,28 @@
+.honor__title{
+    margin-bottom: 40px;
+}
+.honor__teachers{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-gap: 15px;
+    
+}
+@media screen and (max-width: 1170px) {
+    .honor__teachers{
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-gap: 15px;
+    }
+}
+@media screen and (max-width: 800px) {
+    .honor__teachers{
+        display: grid;
+        grid-template-columns: 1fr ;
+        grid-gap: 15px;
+    }
+}
+
+.honor__teacher{
+    border: 3px solid #DDE0EA;
+    border-radius: 10px;
+}

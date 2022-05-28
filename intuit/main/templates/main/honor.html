@@ -1,0 +1,14 @@
+{% extends 'base.html'%}
+
+
+{% block head %}
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/honor/honor.css' %}">
+    <link rel="stylesheet" href="{% static 'css/faculty/teachers.css' %}">
+{% endblock %}
+
+{% block main %}
+    <main>   
+        {% include 'main/blocks/honor.html' with users=teachers%}
+    </main>
+{% endblock %}

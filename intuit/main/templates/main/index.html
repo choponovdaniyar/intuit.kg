@@ -14,6 +14,7 @@
     <link rel="stylesheet" href="{% static 'css/index/partners.css'%}">
     <link rel="stylesheet" href="{% static 'css/index/news.css' %}">
     <link rel="stylesheet" href="{% static 'css/index/post-item.css' %}">
+    <link rel="stylesheet" href="{% static 'css/index/conference.css' %}">
 
     <link rel="stylesheet" href="{% static 'css/base/about.css' %}">
     <link rel="stylesheet" href="{% static 'css/base/docs.css' %}">
@@ -40,12 +41,12 @@
         {% include 'bases/about.html'%}
         {% include 'bases/docs.html'%}
         {% include 'main/blocks/admission.html' %}  
+        {% include 'bases/diploms.html' %}
         {% include 'bases/go-to-uniersity.html' with form=go_to %} 
-        {% include 'bases/diploms.html' %} 
+        {% include 'bases/alldiploms.html' %}
         {% include 'main/blocks/news.html' %}
-        
+        {% include 'main/blocks/conference.html' %}
         {% include 'main/blocks/partners.html' with companies=partners  %}
-
     </main>
 
     {% include 'bases/footer.html' %}

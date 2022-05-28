@@ -1,5 +1,5 @@
 {% load static %}
-<footer class="footer">
+<footer class="footer" >
     <div class="container">
         <div class="footer__aside">
             <div class="footer__logo logo">
@@ -10,6 +10,18 @@
                     Мы в соцсетях
                 </div>
                 <div class="networks__content">
+                    <div class="network">
+                        <a href="https://www.facebook.com/IntUIT.kg/?ti=as" title="Facebook">
+                            <img src="{% static 'img/icons/facebook-icon.svg' %}" alt="" class="icons__img">
+                        </a>
+                    </div>
+                    <div class="network">
+                        <a href="https://www.instagram.com/intuit_kg/" title="Instagram">
+                            <img src="{% static 'img/icons/instagram-icon.svg' %}" alt="" class="icons__img">
+                        </a>
+                    </div>
+                    
+                    
                     <div class="network">
                         <a href="" title="WhatsApp">
                             <img src="{% static 'img/icons/whatsapp-icon.svg' %}">
@@ -168,20 +180,20 @@
                         <a class="a a_blue" href="/#profiles">
                             Специальности
                         </a>
+                    </nav> 
+                    <nav href="{% url 'faculty:faculties' %}" class="footer__nav nav">
+                        <a class="a a_blue" href="/faculties/">
+                            Институты
+                        </a>
                     </nav>
                     <nav href="{% url 'faculty:faculties' %}" class="footer__nav nav">
-                        <a class="a a_blue">
-                            Институты
+                        <a class="a a_blue" href="/collagies/">
+                            Колледжи
                         </a>
                     </nav>
                     <nav class="footer__nav nav">
                         <a class="a a_blue" href="/selection-committee">
-                            Приемная комиссия - -
-                        </a>
-                    </nav>
-                    <nav class="footer__nav nav">
-                        <a class="a a_blue">
-                            Отсрочка от армии - - -
+                            Приемная комиссия
                         </a>
                     </nav>
                     <nav class="footer__nav nav">
@@ -196,17 +208,7 @@
                     </nav>
                     <nav class="footer__nav nav">
                         <a class="a a_blue">
-                            Документы по правилам приема - - -
-                        </a>
-                    </nav>
-                    <nav class="footer__nav nav">
-                        <a class="a a_blue">
                             Оплата обучения - - -
-                        </a>
-                    </nav>
-                    <nav class="footer__nav nav">
-                        <a class="a a_blue">
-                            Целевое обучение - - -
                         </a>
                     </nav>
                     
@@ -216,23 +218,23 @@
                 <div class="footer__navbar">
                     <nav class="footer__nav-title nav-title">
                         <a class="a a_blue">
-                            об университете - - -
+                            об университете
                         </a>
                         <div class="footer__nav-title__icon nav-title__icon"></div>
                     </nav>
                     <nav class="footer__nav nav">
-                        <a class="a a_blue">
-                            Жизнь Университета - - -
+                        <a class="a a_blue" href="{% url 'main:live' %}">
+                            Жизнь Университета 
                         </a>
                     </nav>
                     <nav class="footer__nav nav">
-                        <a class="a a_blue">
-                            Почетные доктора - - -
+                        <a class="a a_blue" href="{% url 'main:honor' status='doctor' %}">
+                            Почетные доктора
                         </a>
                     </nav>
                     <nav class="footer__nav nav">
-                        <a class="a a_blue">
-                            Почетные профессора - - -
+                        <a class="a a_blue" href="{% url 'main:honor' status='professor' %}">
+                            Почетные профессора 
                         </a>
                     </nav>
                     <nav class="footer__nav nav">
@@ -241,12 +243,12 @@
                         </a>
                     </nav>
                     <nav class="footer__nav nav">
-                        <a class="a a_blue">
-                            История - - -
+                        <a class="a a_blue" href="/history/"> 
+                            История
                         </a>
                     </nav>                
                     <nav class="footer__nav nav">
-                        <a class="a a_blue" href="http://178.217.169.139:82/">
+                        <a class="a a_blue" href="http://178.217.169.139/">
                             AVN 
                         </a>
                     </nav> 
@@ -256,13 +258,8 @@
                         </a>
                     </nav> 
                     <nav class="footer__nav nav">
-                        <a class="a a_blue">
-                            Расписание - - -
-                        </a>
-                    </nav> 
-                    <nav class="footer__nav nav">
-                        <a class="a a_blue">
-                            Рейтинг - - -
+                        <a class="a a_blue" href="{% url 'main:timetable'%}">
+                            Расписание
                         </a>
                     </nav> 
                     <nav class="footer__nav nav">
@@ -272,17 +269,22 @@
                     </nav> 
                     <nav class="footer__nav nav">
                         <a class="a a_blue">
-                            Выпускники - - -
-                        </a>
-                    </nav> 
-                    <nav class="footer__nav nav">
-                        <a class="a a_blue">
                             Партнеры - работодатели (- - -)
                         </a>
                     </nav> 
                     <nav class="footer__nav nav">
-                        <a class="a a_blue">
-                            Контакты (- - -)
+                        <a class="a a_blue" href="{% url 'main:contact' %}">
+                            Контакты
+                        </a>
+                    </nav>
+                    <nav class="footer__nav nav">
+                        <a class="a a_blue" href="http://Reyting-intuit.kg">
+                            Рейтинг
+                        </a>
+                    </nav>
+                    <nav class="footer__nav nav">
+                        <a class="a a_blue" href="https://reyting-intuit.kg/?page_id=3126">
+                            Рейтинг ППС
                         </a>
                     </nav>
                 </div>
@@ -301,29 +303,6 @@
                 </div>
 
 
-                <div class="footer__navbar">
-                    <nav class="footer__nav-title nav-title">
-                        <a class="a a_green">
-                            Рейтинг (- - -)
-                        </a>
-                        <div class="footer__nav-title__icon nav-title__icon"></div>
-                    </nav>
-                    <nav class="footer__nav nav">
-                        <a class="a a_blue">
-                            Рейтинг Университета (- - -)
-                        </a>
-                    </nav>
-                    <nav class="footer__nav nav">
-                        <a class="a a_blue">
-                            Рейтинг ППС (- - -)
-                        </a>
-                    </nav>
-                    <nav class="footer__nav nav">
-                        <a class="a a_blue">
-                            Электронные документы рейтингов...   (- - -)
-                        </a>
-                    </nav>
-                </div>  
             </nav>
         </div>
     </div>

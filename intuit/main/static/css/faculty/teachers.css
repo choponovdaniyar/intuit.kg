@@ -46,6 +46,7 @@
 
 .teacher__img-inner{
     border-radius: 100%;
+    border: 3px solid;
 
     width: 150px;
     height: 150px;
@@ -79,5 +80,5 @@
 .teacher__text{
     line-height: 1.55;
 
-    text-align: left;
+    text-align: center;
 }

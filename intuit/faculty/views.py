@@ -4,7 +4,7 @@ from django.views.generic.base import TemplateView
 from django.views.generic.edit import FormView
 from django.core.mail import send_mail
 
-from .models import DetailModel, EducationModel, FacultyModel, ProfileModel, SpecialAbilitiesModel, TeacherModel
+from .models import DetailModel, EducationModel, FacultyModel, PagesModel, ProfileModel, SpecialAbilitiesModel, TeacherModel
 from main import forms as main_forms
 from main import views as main_views
 from main import models as main_models
@@ -20,6 +20,7 @@ class FacultiesListView(ListView):
         context["title"] = "Институты"
         context["details"] = DetailModel.objects.filter(page__title="Факультеты")
         context["go_to"] = main_forms.InteresUser()
+        context["sf"] = PagesModel.objects.get(title=context["title"]).specialabilitiesmodel_set.all()
 
         return context  
 
@@ -36,7 +37,8 @@ class CollagiesListView(ListView):
         context["title"] = "Колледжи"
         context["details"] = DetailModel.objects.filter(page__title="Колледжи") 
         context["go_to"] = main_forms.InteresUser()
-        
+        context["sf"] = PagesModel.objects.get(title=context["title"]).specialabilitiesmodel_set.all()
+
         return context
     
     def get_queryset(self):
@@ -59,23 +61,8 @@ class FacultyListView(ListView):
             object_list = self.get_faculty().faculty.all(),
             **kwargs)
         context["title"] = self.get_faculty()
-        context["details"] = DetailModel.objects.filter(page__title="Колледжи") 
-        faculty = self.get_faculty()
-        if faculty.status == "middle":
-            context["sf"] = SpecialAbilitiesModel.objects.exclude(
-                title="Скидки на обучение в нашем ВУЗе"
-            ).exclude(
-                title="Перевод из другого вуза"
-            )  
-        else:
-            context["sf"] = SpecialAbilitiesModel.objects.exclude(
-                title="Скидки на обучение в нашем колледже"
-            ).exclude(
-                title="Перевод из другого колледжа"
-            )       
-        
-
-        
+        context["details"] = DetailModel.objects.filter(page__title="2олледжи") 
+        faculty = self.get_faculty()  
         return context
 
     def get_success_url(self):
@@ -116,6 +103,10 @@ class EducationListView(ListView, FormView):
             **kwargs)
         context["title"] = self.get_education()
         context["go_to"] = main_forms.InteresUser()
+        try:
+            context["sf"] = PagesModel.objects.get(title=context["title"].title).specialabilitiesmodel_set.all()
+        except PagesModel.DoesNotExist as e:
+            print(e)
         return context
     
     def get_success_url(self):
@@ -174,8 +165,6 @@ class ProfileListView(TemplateView, FormView):
     def form_invalid(self, form):
         print(form)
         return super().form_invalid(form)
-
-
 
 
 

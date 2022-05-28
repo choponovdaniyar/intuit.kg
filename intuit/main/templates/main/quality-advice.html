@@ -1,0 +1,17 @@
+{% extends 'base.html'%}
+
+
+{% block head %}
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/quality-advice/quality-advice.css' %}">
+{% endblock %}
+
+{% block main %}
+    <main>   
+        {% include 'main/blocks/quality-advice.html'  %}
+    </main>
+{% endblock %}
+
+{% block scripts %}
+    {% load static%}
+{% endblock %}

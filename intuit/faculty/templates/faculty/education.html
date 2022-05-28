@@ -12,6 +12,10 @@
     <main>   
         {% include 'faculty/blocks/faculties-intro.html' with title=title details=title.detail.all desc=title.description%}
 
+        {% if title.eduform.all.count > 0 %}
+            {% include 'bases/edu-forms.html' with edu_forms=title.eduform.all %}
+        {% endif %}
+
         {% if title.pk == 4 %}
             {% include 'bases/programs.html' with page=title title='Научные специальности' education=True %}
         {% else %}
@@ -31,15 +35,18 @@
             {% include 'bases/go-to-uniersity.html' with form=go_to %}
         {% endif %}
         
-        {% if title.eduform.all.count > 0 %}
-            {% include 'bases/edu-forms.html' with edu_forms=title.eduform.all %}
-        {% endif %}
         
         {% if title.special_abilities.all > 0 %}
             {% include 'bases/special-features.html' with special_features=title.special_abilities.all %}
         {% endif %}
+
+
+        {% include 'bases/special-features.html' with special_features=sf %}
         
         {% include 'bases/catalog.html' %} 
+
+        {% include 'bases/docs.html' with docs=title.documents.all %}
+
         {% include 'bases/diploms.html' %} 
     </main>
 {% endblock %}

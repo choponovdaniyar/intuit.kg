@@ -4,10 +4,10 @@
 
 .diploms__items{
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(2, 1fr);
     grid-gap: 20px;
 
-    text-align: center;
+    padding-bottom: 10px;
 }
 @media screen and (max-width: 992px){
     .diploms__items{
@@ -32,25 +32,22 @@
 }
 .diploms__item{
     display: grid;
-    grid-template-columns: 1fr;
-    grid-gap: 40px;
-
-    padding: 64px 10px;
+    grid-template-columns: auto 1fr;
+    grid-gap: 10px;
+    
+    padding: 10px;
     box-sizing: border-box;
 
-
-    background-color: #0095701e;
+    background-color: rgba(42,33,115, .1);
+    color: rgb(42,33,115);
+   
     justify-content: center;
+
+    transition: 0.2s;
 }
-@media screen and (max-width: 992px) {
-    .diploms__item{
-        padding: 32px 24px 35px;
-    }
-}
-@media screen and (max-width: 769px) {
-    .diploms__item{
-        padding: 24px 15px 30px;
-    }
+.diploms__item:hover{
+    color: rgb(0,149,111);
+    background-color: rgba(0,149,111, .1);
 }
 @media screen and (max-width: 575px) {
     .diploms__item{
@@ -64,6 +61,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    grid-row: 1 / 3;
 
     height: 72px;
     width: auto;
@@ -119,7 +117,7 @@
 .diploms__search-inner{
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: start;
 }
 @media screen and (max-width: 992px){
     .diploms__search-inner{

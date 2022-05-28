@@ -1,0 +1,17 @@
+{% extends 'base.html'%}
+
+
+{% block head %}
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/live/live.css' %}">
+{% endblock %}
+
+{% block main %}
+    <main>   
+        {% include 'main/blocks/live.html' %}
+    </main>
+{% endblock %}
+
+{% block scripts %}
+    {% load static%}
+{% endblock %}

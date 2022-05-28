@@ -31,34 +31,45 @@
                 {% endwith %}    
             </div>
         </a>
-        <div class="header__phones phones">
-            <div class="header__phone phone">
-                <div class="phone__left">
-                    <img src="{% static 'img/icons/phone-icon.svg' %}"alt="">
+        <a href="/#quiz" class="a header__button text_blue">
+            Подбери программу
+        </a>
+        <div class="haeder__content">
+            <div class="header__phones phones">
+                <div class="header__phone phone">
+                    <div class="phone__left">
+                        <img src="{% static 'img/icons/phone-icon.svg' %}"alt="">
+                    </div>
+                    <div class="phone__text">
+                        <a class="a a_green" href="tel:74958001001">+996 312 88 40 96</a>
+                    </div>
                 </div>
-                <div class="phone__text">
-                    <a class="a a_green" href="tel:74958001001">+996 312 88 40 96</a>
-                </div>
+                <!-- <div class="header__phone phone">
+                    <div class="phone__left">
+                        <img src="./img/icons/phone-icon.svg" alt="">
+                    </div>
+                    <div class="phone__text">
+                        <a class="a a_green"href="tel:74958001001">+996 312 88 40 96</a>
+                    </div>
+                    <div class="phone__right">
+                        <img src="./img/icons/24-7-icon.svg" alt="">
+                    </div>
+                </div> -->
             </div>
-            <!-- <div class="header__phone phone">
-                <div class="phone__left">
-                    <img src="./img/icons/phone-icon.svg" alt="">
+            <div class="header__burger burger burger_color">
+                <div href="" id="burger-trigger" class="burger__btn">
+                    <span class="burger__burger"></span>
+                    <span class="burger__exit"></span>
                 </div>
-                <div class="phone__text">
-                    <a class="a a_green"href="tel:74958001001">+996 312 88 40 96</a>
-                </div>
-                <div class="phone__right">
-                    <img src="./img/icons/24-7-icon.svg" alt="">
-                </div>
-            </div> -->
+            </div>  
         </div>
-        <div class="header__burger burger burger_color">
-            <div href="" id="burger-trigger" class="burger__btn">
-                <span class="burger__burger"></span>
-                <span class="burger__exit"></span>
-            </div>
-        </div>
+    </div>  
+    <div class="container header__inner_2">
+        <a href="/#quiz" class="a header__button text_blue header_button_2">
+            Подбери программу
+        </a> 
     </div>
+    
     <div class="container">
         <div class="header__educations">
             <nav class="header__education education"><a href="{% url 'main:enrollee' %}" class="a a_green">Абитуриентам</a></nav>

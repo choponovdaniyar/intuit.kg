@@ -1,0 +1,22 @@
+{% extends 'base.html'%}
+
+
+{% block head %}
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/selection-committee/contact.css' %}">
+    <link rel="stylesheet" href="{% static 'css/base/map.css' %}">
+{% endblock %}
+
+{% block main %}    
+    <main>   
+        {% include 'main/blocks/contact.html' with page=title email=email %}
+        <div class="map">
+            <div class="container">
+                <div >
+                    <iframe class="map__map" src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d2924.3406611332357!2d74.6789948!3d42.8656534!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x389eb71da2d7906f%3A0xafa2fd7c335c28fd!2z0JzQo9CY0KI!5e0!3m2!1sru!2skg!4v1653453205628!5m2!1sru!2skg" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                </div>
+            </div>
+        </div>
+        {% include 'bases/go-to-uniersity.html' with form=go_to %}
+    </main>
+{% endblock %}

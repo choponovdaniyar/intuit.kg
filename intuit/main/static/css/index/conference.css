@@ -1,0 +1,14 @@
+.conference{
+    background-color: #E9E8F1;
+
+    padding: 30px;
+    box-sizing: border-box;
+}
+
+
+.conference__title{
+    margin-bottom: 10px;
+}
+.conference__subtitle{
+    margin-bottom: 20px;
+}

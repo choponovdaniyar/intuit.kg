@@ -1,0 +1,43 @@
+<section class="contact margin-bottom" id="contact">
+    <div class="container contact__inner hidden-scroller">
+        <h3 class="contact__title text_blue h2">Контакты приёмной комиссии</h3>
+        <div class="contact__items hidden-scroller">
+
+            <div class="contact__item text_blue">
+                <div class="contact__item-title h4">Адрес</div>
+                <p class="contact__item-text">г.Бишкек, ул.Анкара (Виноградная) 1/17</p>
+            </div>
+            <div class="contact__item text_blue">
+                <div class="contact__item-title h4">Как доехать</div>
+                <p class="contact__item-text">Автобус: 7; Троллейбусы 1 и 7 маршрутные бусы: 129, 128, 147, 154, 166, 251, 102, 105, 222, 262</p>
+            </div>
+            <div class="contact__item text_blue">
+                <div class="contact__item-title h4">Телефон для связи</div>
+                <p class="contact__item-text">
+                    <p>0(706)884-096</p>
+                    <p>0(500)100-831</p>
+                    <p>0(312)44-99-03</p>
+                </p>
+            </div>
+            <div class="contact__item text_blue">
+                <div class="contact__item-title h4">Время работы</div>
+                <p class="contact__item-text">пн-пт 08:00-17:00</p>
+            </div>
+            <div class="contact__item text_blue">
+                <div class="contact__item-title h4">e-mail</div>
+                <p class="contact__item-text">intuit@intuit.kg</p>
+            </div>
+            {% if page == 'Контакты' %}
+                <div class="contact__item text_blue">
+                    <div class="contact__item-title h4">Приемная ректора</div>
+                    <p class="contact__item-text">(+996) 312 44 99 03</p>
+                </div>
+                <div class="contact__item text_blue">
+                    <div class="contact__item-title h4">
+                        <a href="mailto:{{ email }}" class="a">Ящик доверия</a>
+                    </div>
+                </div>
+            {% endif %}
+        </div>
+    </div>
+</section>

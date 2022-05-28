@@ -1,3 +1,4 @@
+from tabnanny import verbose
 from django.db import models
 from django.urls import reverse
 
@@ -60,65 +61,6 @@ class ProfileModel(models.Model):
         return self.title
 
 
-class TeacherModel(models.Model):
-    name = models.CharField(verbose_name="ФИО", max_length=250)
-    slug = models.SlugField(verbose_name="Ссылка",  blank=True)
-    
-    STATUS_CHOISE = (
-        ("1", "Преподаватель"),
-        ("2", "Старший преподаватель"),
-        ("3", "Кандитат наук"),
-        ("4", "Профессор"),
-        ("5", "Доцент")
-    )
-    status = models.CharField(verbose_name="Звание", choices=STATUS_CHOISE, default="1", max_length=20)
-
-    description = models.TextField(verbose_name="Описание", blank=True)
-    image = models.FileField(verbose_name="Изображение", upload_to="faculty/images/teachers", blank=True)
-
-
-    facebook = models.CharField(
-        verbose_name="facebook", 
-        help_text='Введите ссылку на профиль (не обязательное полое)', 
-        max_length=100,
-        blank=True)
-
-    telegram = models.CharField(
-        verbose_name="Телеграм", 
-        help_text="Введите ссылку на профиль (не обязательное полое)",
-        max_length=100,
-        blank=True)
-
-    instagram = models.CharField(
-        verbose_name="Инстаграм", 
-        help_text="Введите ссылку на профиль (не обязательное полое)", 
-        max_length=100,
-        blank=True)
-
-    youtube = models.CharField(
-        verbose_name="YouTube", 
-        help_text="Введите ссылку на профиль (не обязательное полое)",
-        max_length=100,
-        blank=True)
-
-    curriculum_vitae = models.FileField(
-        verbose_name="Логотип", 
-        upload_to="faculty/files/cv", 
-        blank=True)
-
-    class Meta:
-        ordering = ("name",)
-        verbose_name = "Преподаватель"
-        verbose_name_plural = "Преподаватели"
-
-    def get_absolute_url(self):
-            return reverse("faculty:teachers", args=[self.slug])
-
-
-    def __str__(self):
-        return self.name
-
-
 class FacultyModel(models.Model):
     STATUS_CHOICES = (
         ("middle", "среднее"),
@@ -164,6 +106,10 @@ class DocumentModel(models.Model):
 class CourseModel(models.Model):
     title = models.CharField(verbose_name="Название", max_length=250)
     description = models.TextField(verbose_name="Описание")
+    
+    scale1 = models.IntegerField(verbose_name="Технические", default=1)
+    scale2 = models.IntegerField(verbose_name="Естественные", default=1)
+    scale3 = models.IntegerField(verbose_name="Гуманитарные", default=1)
 
     class Meta:
         ordering = ("title",)
@@ -240,8 +186,7 @@ class EducationModel(models.Model):
     info = models.ManyToManyField(verbose_name="Общая информация", to="DetailModel",
                                         related_name="info")
     documents = models.ManyToManyField(verbose_name="Документы", to="DocumentModel", 
-                                        blank=True, related_name="education_document")
-    
+                                        blank=True, related_name="education_documents")
 
     class Meta:
         ordering = ("title",)
@@ -273,7 +218,7 @@ class DetailModel(models.Model):
     image = models.FileField(verbose_name="Иконка", upload_to="faculty/images/icons/detail",
                             null=True, blank=True)
     page = models.ForeignKey(verbose_name="Страница", to="PagesModel", null=True, blank=True,
-                                on_delete=models.CASCADE, default=1)
+                                on_delete=models.CASCADE, default=1, related_name="details")
     
     
     class Meta:
@@ -291,6 +236,7 @@ class SpecialAbilitiesModel(models.Model):
     details = models.ManyToManyField(verbose_name="Детали", blank=True,
                                         related_name="abilities_detail",
                                         to = "SpecialAbilitiesDetailModel")
+    pages = models.ManyToManyField(verbose_name="страницы", blank=True, to=PagesModel)
 
     class Meta:
         ordering = ('title',)
@@ -312,3 +258,84 @@ class SpecialAbilitiesDetailModel(models.Model):
     def  __str__(self):
         return self.title
 
+
+class TeacherModel(models.Model):
+    STATUS_CHOISE = (
+        ("1", "Преподаватель"),
+        ("2", "Старший преподаватель"),
+        ("3", "Кандитат наук"),
+        ("4", "Профессор"),
+        ("5", "Доцент")
+    )
+    RANK_CHOISE = (
+        ("no","Отсутствует"),
+        ("professor","Почетный профессор"),
+        ("doctor","Почетный доктор"),
+    )
+
+    name = models.CharField(verbose_name="ФИО", max_length=250)
+    slug = models.SlugField(verbose_name="Ссылка",  blank=True)
+    position = models.ForeignKey(verbose_name="Должность", to="PositionModel",
+                    on_delete=models.CASCADE, default=2)
+    rank = models.CharField(verbose_name="Статус", max_length=50, 
+                    choices=RANK_CHOISE, default="no")
+    
+    status = models.CharField(verbose_name="Звание", choices=STATUS_CHOISE, default="1", max_length=20)
+
+    description = models.TextField(verbose_name="Описание", blank=True)
+    image = models.FileField(verbose_name="Изображение", upload_to="faculty/images/teachers", blank=True)
+
+
+    facebook = models.CharField(
+        verbose_name="facebook", 
+        help_text='Введите ссылку на профиль (не обязательное полое)', 
+        max_length=100,
+        blank=True)
+
+    telegram = models.CharField(
+        verbose_name="Телеграм", 
+        help_text="Введите ссылку на профиль (не обязательное полое)",
+        max_length=100,
+        blank=True)
+
+    instagram = models.CharField(
+        verbose_name="Инстаграм", 
+        help_text="Введите ссылку на профиль (не обязательное полое)", 
+        max_length=100,
+        blank=True)
+
+    youtube = models.CharField(
+        verbose_name="YouTube", 
+        help_text="Введите ссылку на профиль (не обязательное полое)",
+        max_length=100,
+        blank=True)
+
+    curriculum_vitae = models.FileField(
+        verbose_name="Логотип", 
+        upload_to="faculty/files/cv", 
+        blank=True)
+
+    class Meta:
+        ordering = ("position",)
+        verbose_name = "Преподаватель"
+        verbose_name_plural = "Преподаватели"
+
+    def get_absolute_url(self):
+            return reverse("faculty:teachers", args=[self.slug])
+
+    def __str__(self):
+        return self.name
+
+
+
+class PositionModel(models.Model):
+    title = models.CharField(verbose_name="Должность", max_length=100)
+    level = models.IntegerField(verbose_name="Приоритет должности")
+    
+    class Meta:
+        ordering = ['level']
+        verbose_name = "Должность"
+        verbose_name_plural = "Должности"
+    
+    def  __str__(self):
+        return self.title

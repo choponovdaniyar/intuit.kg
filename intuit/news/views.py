@@ -36,18 +36,6 @@ class PostCategoryListView(ListView):
                                         slug = self.kwargs["category"])
         return category.categories.filter(status="active")
 
-
-
-class PostDetailView(DetailView):  
-    model = PostModel
-    def get_context_data(self, **kwargs):
-        context = super().get_context_data(**kwargs)
-        category = get_object_or_404(CategoryModel, 
-                                        slug = self.kwargs["category"])
-        print(self.kwargs)
-        context["title"] = category.title
-        
-        return context
     
 
 def post_detail(request, year, month, day, post):

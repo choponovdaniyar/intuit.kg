@@ -1,40 +1,24 @@
-{% load static %}
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Приемная комиссия</title>
+{% extends 'base.html'%}
 
+
+{% block head %}
+    {% load static %}
     <link rel="stylesheet" href="{% static 'css/selection-committee/selection-committee-intro.css' %}">
+    <link rel="stylesheet" href="{% static 'css/selection-committee/contact.css' %}">
+    <link rel="stylesheet" href="{% static 'css/selection-committee/for-enrollee.css' %}">
+{% endblock %}
 
-
-    <link rel="stylesheet" href="{% static 'css/base/about.css' %}">
-    <link rel="stylesheet" href="{% static 'css/base/docs.css' %}">
-    <link rel="stylesheet" href="{% static 'css/base/diploms.css' %}">
-    <link rel="stylesheet" href="{% static 'css/base/catalog.css' %}">
-    <link rel="stylesheet" href="{% static 'css/base/programs.css' %}">
-    <link rel="stylesheet" href="{% static 'css/base/go-to-university.css' %}">
-    <link rel="stylesheet" href="{% static 'css/base/base.css' %}">
-    <link rel="stylesheet" href="{% static 'css/base/elems.css' %}">
-    <link rel="stylesheet" href="{% static 'css/base/header.css' %}">
-    <link rel="stylesheet" href="{% static 'css/base/footer.css' %}">
-    <link rel="stylesheet" href="{% static 'css/base/burger.css' %}">
- 
-
-    
-
-</head>
-<body>
-    {% include 'bases/header.html'%}
+{% block main %}
     <main>   
         {% include 'main/blocks/selection-committee-intro.html' %}
-        {% include 'bases/go-to-uniersity.html' with form=go_to %}
         {% include 'bases/programs.html' with profiles=programs %}
+        {% include 'main/blocks/for-enrollee.html' with form=go_to quitions=quitions %}
+        {% include 'bases/go-to-uniersity.html' with form=form %}
+        {% include 'main/blocks/contact.html' %}
     </main>
+{% endblock %}
 
-    {% include 'bases/footer.html' %}
-
-</body>
-</html>
+{% block scripts %}
+    {% load static%}
+    <script src="{% static 'js/for-enrollee.js'%}"></script>
+{% endblock %}

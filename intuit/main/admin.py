@@ -4,6 +4,8 @@ from django.utils.safestring import mark_safe
 from .models import *
 
 
+admin.site.register(QuestionModel)
+
 
 @admin.register(ChoiceProgram)
 class ChoiseProgramAdmin(admin.ModelAdmin):
@@ -16,8 +18,8 @@ class ChoiseProgramAdmin(admin.ModelAdmin):
 
 @admin.register(InteresUserModel)
 class InteresUerAdmin(admin.ModelAdmin):
-    list_display = ["user", "phone", "category","date", "status"]
-    readonly_fields = ("user", "phone", "category", "date")
+    list_display = ["user", "phone", "email", "category","date", "status"]
+    readonly_fields = ("user", "phone", "category", "date", "email")
     date_hierarchy = "date"
     list_filter = ("category", "status")
     ordering = ('-date',)

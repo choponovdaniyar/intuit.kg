@@ -5,6 +5,13 @@ from .models import *
 
 admin.site.register(PagesModel)
 
+
+@admin.register(PositionModel)
+class PositionAdmin(admin.ModelAdmin):
+    list_display = ["title", "level"]
+    list_editable = ["level"]
+
+
 @admin.register(ProfileModel)
 class ProfileAdmin(admin.ModelAdmin):
     fieldsets = [
@@ -83,12 +90,15 @@ class EduFormAdmin(admin.ModelAdmin):
     def title_(self,object):
         page = self.get_page(object)
         return f"{page}/{object.title}"
+
+
 @admin.register(EducationModel)
 class EducationAdmin(admin.ModelAdmin):
     list_display = [ 'title'] 
     search_fields = [ "title"]
     prepopulated_fields = {"slug": ["title"]}
     filter_horizontal = ["detail", "special_abilities", "eduform", "info", "documents", "teachers"]
+
 
 
 
@@ -127,10 +137,12 @@ class DetailAdmin(admin.ModelAdmin):
 class TeacherAdmin(admin.ModelAdmin):
     search_fields   = [ "name" ]
     prepopulated_fields = {"slug": ["name"]}
-    list_display = [ 'name', 'get_photo']
-    list_filter = [ "name" ] 
+    list_display = [ 'name', 'get_photo', "position"]
+    list_filter = [ "position", "name"] 
+    list_editable = ["position"]
     list_per_page = 20
     readonly_fields = ["get_photo"]
+    save_as = True
 
 
     def get_photo(self, object):
@@ -142,32 +154,25 @@ class TeacherAdmin(admin.ModelAdmin):
 @admin.register(DocumentModel)
 class DocumentAdmin(admin.ModelAdmin):
     search_fields = [ "title"]
-    list_display = [ 'title', 'get_doc']
-    readonly_fields = ["get_doc"]
+    list_display = [ 'title' ]
     list_filter = [ "title" ] 
     
-    list_per_page = 20
+    list_per_page = 100
 
-    def get_doc(self, object):
-        if object.document:
-            return mark_safe(f"<img src='{object.document.url}' height=100>")
-
-    get_doc.short_description = "Документ"
 
 
 @admin.register(CourseModel)
 class CourseAdmin(admin.ModelAdmin):
-    list_display = [ "title", 'get_profile' ]
-    search_fields = [ "title", "get_profile"]
+    list_display = [ "title", "get_profile" ]
     list_filter =  [ "title" ] 
     list_per_page = 20
-
+    
 
     def get_profile(self,object):
         if object.courses.all().count() > 0:
             el = object.courses.all()[0]
         else:
-            el = ""
+            el = "- - -"
         return f"{el}"
     get_profile.short_description = "Направление"
 
@@ -192,7 +197,7 @@ class SpecialAbilitiesAdmin(admin.ModelAdmin):
     list_display = [ 'title']
     search_fields = [ "title"]
     list_filter = [ "title" ] 
-    filter_horizontal = ['details']
+    filter_horizontal = ['details', 'pages']
 
     list_per_page = 20
 
